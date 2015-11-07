@@ -1,4 +1,16 @@
-
 public class Players {
 
+	private String sPlayer;
+	private int iPlayerID;
+	private int iMoney;
+	private int iBoardPosition;
+	//Property ownership under each individual property
+	
+	
+	//The void is not in the example in the book, but it was needed to get the IDE to shut up
+	public void Player(String sPlayer,int )
+	{
+		
+	}
+	
 }
