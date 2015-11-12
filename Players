@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+
 public class Players {
 
 	private String sPlayer;
@@ -8,9 +10,89 @@ public class Players {
 	
 	
 	//The void is not in the example in the book, but it was needed to get the IDE to shut up
-	public void Player(String sPlayer,int )
+	public Players(String sPlayer)
 	{
+		//Need to verify inputs to not allow null for player name (pressed cancel)
+		this.sPlayer=sPlayer;
 		
 	}
 	
+
+
+/*
+ * The two methods below JOptionPane to have the user select a number of players
+ * and then runs a method from the players class to perform
+ * the initial game setup for that number of players
+ */
+
+	
+	public static void setup()
+		{
+			Object[] lOptions = {"2","3","4"};
+			boolean bStarted = false;
+			while(!bStarted){
+				//keep null, Prompt, Title of box, Type of message, icon {ignore this}, object[] containing options, default anwser
+				String sPlayerCount = (String)JOptionPane.showInputDialog(null, "Select Number of Players", "Players", JOptionPane.PLAIN_MESSAGE, null, lOptions, "2");
+				//System.out.println(playerCount);
+				if (sPlayerCount == null){
+					QuitPrompt();
+				}
+				
+				else{
+					//MAKE METHOD FOR THIS IN PLAYERS CLASS!
+					int iNumPlayers=Integer.parseInt(sPlayerCount);
+					playerSetup(iNumPlayers);
+					bStarted = true;
+				}
+				
+			}
+		}
+	
+		private static void playerSetup(int iNumPlayers)
+		{
+			if(iNumPlayers==2)
+			{
+				String sPlayer1Name = JOptionPane.showInputDialog(null,"Please enter player 1's name: ");
+				Players oPlayer1 = new Players(sPlayer1Name);
+				String sPlayer2Name = JOptionPane.showInputDialog(null,"Please enter player 2's name: ");
+				Players oPlayer2 = new Players(sPlayer2Name);
+			}
+			else if(iNumPlayers==3)
+			{
+				String sPlayer1Name = JOptionPane.showInputDialog(null,"Please enter player 1's name: ");
+				Players oPlayer1 = new Players(sPlayer1Name);
+				String sPlayer2Name = JOptionPane.showInputDialog(null,"Please enter player 2's name: ");
+				Players oPlayer2 = new Players(sPlayer2Name);
+				String sPlayer3Name = JOptionPane.showInputDialog(null,"Please enter player 3's name: ");
+				Players oPlayer3 = new Players(sPlayer3Name);
+			}
+			else
+			{
+				String sPlayer1Name = JOptionPane.showInputDialog(null,"Please enter player 1's name: ");
+				Players oPlayer1 = new Players(sPlayer1Name);
+				String sPlayer2Name = JOptionPane.showInputDialog(null,"Please enter player 2's name: ");
+				Players oPlayer2 = new Players(sPlayer2Name);
+				String sPlayer3Name = JOptionPane.showInputDialog(null,"Please enter player 3's name: ");
+				Players oPlayer3 = new Players(sPlayer3Name);
+				String sPlayer4Name = JOptionPane.showInputDialog(null,"Please enter player 4's name: ");
+				Players oPlayer4 = new Players(sPlayer3Name);
+			}
+			
+		}
+		private static void QuitPrompt(){ // Will prompt for player to quit Y/N. 
+			int choice = JOptionPane.showConfirmDialog(
+				    null, "Would you like to quit?",
+				    "Quit?",
+				    JOptionPane.YES_NO_OPTION);
+			if (choice == 0){
+				System.exit(0);
+			}
+			else if (choice == 1){
+				return;
+			}
+			else{
+				System.out.println("Error. Incorrect option chosen. Terminating :(");
+				System.exit(0);
+			}
+		}
 }
