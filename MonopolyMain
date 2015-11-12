@@ -1,8 +1,23 @@
+
 public class MonopolyMain {
 
 	public static void main(String[] args) {
-
-	Players.setup();
 		
+		//Players.setup();
+		
+		Properties oMediterraneanAve = new Properties("Mediterranean Avenue",60,2,10,30,90,160,250,30,50,50);
+
+		System.out.println("Property: " + oMediterraneanAve.getsName());
+		System.out.println("Cost: " + oMediterraneanAve.getiCost());
+		System.out.println("Rent: " + oMediterraneanAve.getiRent());
+		System.out.println("1 House: " + oMediterraneanAve.getiOneHouse());
+		System.out.println("2 Houses: " + oMediterraneanAve.getiTwoHouse());
+		System.out.println("3 Houses: " + oMediterraneanAve.getiThreeHouse());
+		System.out.println("4 Houses: " + oMediterraneanAve.getiFourHouse());
+		System.out.println("Hotel: " + oMediterraneanAve.getiHotel());
+		System.out.println("Mortgage: " + oMediterraneanAve.getiMortgage());
+		System.out.println("House Cost: " + oMediterraneanAve.getiHouseCost());
+		System.out.println("Hotel Cost: " + oMediterraneanAve.getiHotelCost());
 	}
+
 }
