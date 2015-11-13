@@ -1,6 +1,7 @@
 
 public class Chance {
 //First Commit
+//code help from bruce**
 /*dictionary of cards each assigned a number
 		 * [0:"Advance to Go (Collect $200)"
 		 1:"Advance" to Illinois Ave. - If you pass Go, collect $200"
