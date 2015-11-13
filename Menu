@@ -1,4 +1,6 @@
 
 public class Menu {
-
+//Exit
+//Restart
+//prompt user to exit or restart when win condition is met (or if desired during game)
 }
