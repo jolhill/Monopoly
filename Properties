@@ -1,6 +1,7 @@
 
 public class Properties {
 	
+	private int iSpace;
 	private String sName;
 	private int iCost;
 	private int iRent;
@@ -15,6 +16,7 @@ public class Properties {
 
 	public Properties()
 	{	
+		iSpace = 0;
 		sName = "";
 		iCost = 0;
 		iRent = 0;
@@ -28,8 +30,9 @@ public class Properties {
 		iHotelCost = 0;
 	}
 	
-	public Properties(String sName, int iCost, int iRent, int iOneHouse, int iTwoHouse, int iThreeHouse, int iFourHouse, int iHotel, int iMortgage, int iHouseCost, int iHotelCost)
+	public Properties(int iSpace, String sName, int iCost, int iRent, int iOneHouse, int iTwoHouse, int iThreeHouse, int iFourHouse, int iHotel, int iMortgage, int iHouseCost, int iHotelCost)
 	{
+		this.iSpace = iSpace;
 		this.sName = sName;
 		this.iCost = iCost;
 		this.iRent = iRent;
@@ -41,6 +44,16 @@ public class Properties {
 		this.iMortgage = iMortgage;
 		this.iHouseCost = iHouseCost;
 		this.iHotelCost = iHotelCost;
+	}
+	
+	public void setiSpace(int iSpace)
+	{
+		this.iSpace = iSpace;
+	}
+	
+	public int getiSpace()
+	{
+		return iSpace;
 	}
 	
 	public void setsName(String sName)
