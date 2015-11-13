@@ -5,8 +5,53 @@ public class MonopolyMain {
 		
 		//Players.setup();
 		
-		Properties oMediterraneanAve = new Properties("Mediterranean Avenue",60,2,10,30,90,160,250,30,50,50);
+		Properties oGo = new Properties(0,"Go",0,0,0,0,0,0,0,0,0,0);
+		Properties oMediterraneanAve = new Properties(1,"Mediterranean Avenue",60,2,10,30,90,160,250,30,50,50);
+		Properties oCommunityChest = new Properties(2,"Community Chest",0,0,0,0,0,0,0,0,0,0);
+		Properties oBalticAvenue = new Properties(3,"Baltic Avenue",60,0,0,0,0,0,0,0,0,0);
+		Properties oIncomeTax = new Properties(4,"Income Tax",0,0,0,0,0,0,0,0,0,0);
+		Properties oReadingRailroad = new Properties(5,"Reading Railroad",200,0,0,0,0,0,0,0,0,0);
+		Properties oOrientalAvenue = new Properties(6,"Oriental Avenue",100,0,0,0,0,0,0,0,0,0);
+		Properties oChance = new Properties(7,"Chance",0,0,0,0,0,0,0,0,0,0);
+		Properties oVermontAvenue = new Properties(8,"Vermont Avenue",100,0,0,0,0,0,0,0,0,0);
+		Properties oConnecticutAvenue = new Properties(9,"Connenecticut Avenue",120,0,0,0,0,0,0,0,0,0);
+		Properties oJail = new Properties(10,"Jail",0,0,0,0,0,0,0,0,0,0);
+		Properties oStCharlesPlace = new Properties(11,"St. Charles Place",140,0,0,0,0,0,0,0,0,0);
+		Properties oElectricCompany = new Properties(12,"Electric Company",150,0,0,0,0,0,0,0,0,0);
+		Properties oStatesAvenue = new Properties(13,"States Avenue",140,0,0,0,0,0,0,0,0,0);
+		Properties oVirginiaAvenue = new Properties(14,"Virginia Avenue",160,0,0,0,0,0,0,0,0,0);
+		Properties oPennsylvaniaRailroad = new Properties(15,"Pennsylvania Railroad",200,0,0,0,0,0,0,0,0,0);
+		Properties oStJamesPlace = new Properties(16,"St. James Place",180,0,0,0,0,0,0,0,0,0);
+		Properties oCommunityChestTwo = new Properties(17,"Community Chest",0,0,0,0,0,0,0,0,0,0);
+		Properties oTennesseeAvenue = new Properties(18,"Tennessee Avenue",180,0,0,0,0,0,0,0,0,0);
+		Properties oNewYourkAvenue = new Properties(19,"New York Avenue",200,0,0,0,0,0,0,0,0,0);
+		Properties oFreeParking = new Properties(20,"Free Parking",0,0,0,0,0,0,0,0,0,0);
+		Properties oKentuckyAvenue = new Properties(21,"Kentucky Avenue",220,0,0,0,0,0,0,0,0,0);
+		Properties oChanceTwo = new Properties(22,"Chance",0,0,0,0,0,0,0,0,0,0);
+		Properties oIndianaAvenue = new Properties(23,"Indiana Avenue",220,0,0,0,0,0,0,0,0,0);
+		Properties oIllinoisAvenue = new Properties(24,"Illinois Avenue",240,0,0,0,0,0,0,0,0,0);
+		Properties oBandORailroad = new Properties(25,"B.&O. Railroad",200,0,0,0,0,0,0,0,0,0);
+		Properties oAtlanticAvenue = new Properties(26,"Atlantic Avenue",260,0,0,0,0,0,0,0,0,0);
+		Properties oVentnorAvenue = new Properties(27,"Ventnor Avenue",260,0,0,0,0,0,0,0,0,0);
+		Properties oWaterWorks = new Properties(28,"Water Works",150,0,0,0,0,0,0,0,0,0);
+		Properties oMarvinGardens = new Properties(29,"Marvin Gardens",280,0,0,0,0,0,0,0,0,0);
+		Properties oGoToJail = new Properties(30,"Go To Jail",0,0,0,0,0,0,0,0,0,0);
+		Properties oPacificAvenue = new Properties(31,"Pacific Avenue",300,0,0,0,0,0,0,0,0,0);
+		Properties oNorthCarolinaAvenue = new Properties(32,"North Carolina Avenue",300,0,0,0,0,0,0,0,0,0);
+		Properties oCommunityChestThree = new Properties(33,"Community Chest",0,0,0,0,0,0,0,0,0,0);
+		Properties oPennsylvaniaAvenue = new Properties(34,"Pennsylvania Avenue",320,0,0,0,0,0,0,0,0,0);
+		Properties oShortLine = new Properties(35,"Short Line",200,0,0,0,0,0,0,0,0,0);
+		Properties oChanceThree = new Properties(36,"Chance",0,0,0,0,0,0,0,0,0,0);
+		Properties oParkPlace = new Properties(37,"Park Place",350,0,0,0,0,0,0,0,0,0);
+		Properties oLuxuryTax = new Properties(38,"Luxary Tax",0,0,0,0,0,0,0,0,0,0);
+		Properties oBoardWalk = new Properties(39,"Boardwalk",400,0,0,0,0,0,0,0,0,0);
 
+		
+		
+		
+		
+		
+		
 		System.out.println("Property: " + oMediterraneanAve.getsName());
 		System.out.println("Cost: " + oMediterraneanAve.getiCost());
 		System.out.println("Rent: " + oMediterraneanAve.getiRent());
