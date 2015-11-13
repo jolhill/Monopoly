@@ -14,10 +14,9 @@ public class Chance {
 		 9:Get out of jail free "token" (may be kept or sold)
 		 10: Go back 3 "spaces"
 		 11:Pay poor tax of $15
-		 12:You have been elected chairman of the board! pay each player 50$
-		 13:Advance token to the nearest Railroad amd pay owner twice the rental to which he/she is entitled. if Railroad is unowned you may buy it from the bank.
-		 14:
-		 15:
+		 12:You have been elected chairman of the board! pay each player $50
+		 13:"Advance token to the nearest Railroad amd pay owner twice the rental to which he/she is entitled. if Railroad is unowned you may buy it from the bank.
+		
 		 
 		 
 		 
@@ -32,7 +31,7 @@ public class Chance {
 		 *return stack
 		 *
 		 * draw = Something.getnext(card);
-		 * if(card != 7){
+		 * if(card != ){
 		 * do card effect
 		 * }else{give card to player}
 		 * put used card on bottom of stack
