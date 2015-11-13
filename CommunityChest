@@ -1,4 +1,18 @@
 
 public class CommunityChest {
+	public void Chest(){
+		/*dictionary of cards each assigned a number
+		 * [0:"Grand opera opening", 1:"second prize", 2:"inherit $100", 3:"Street Repairs", 4: "GO TO JAIL!", 5:"School Tax", 6: "Sell of Stocks", 7:"Get OUT of JAil Free", 8:"Life Insurance", 9:"Tax Refund", 10: "Bank Error", 11:"Receive for Service", 12:"Pay Hospital", 13:"Advance to GO!", 14:"Doctor's Fee", 15:"Xmas Funds"]
+		 *input list of numbers organized randomly  = stack
+		 *return stack
+		 *
+		 * draw = Something.getnext(card);
+		 * if(card != 7){
+		 * do card effect
+		 * }else{give card to player}
+		 * put used card on bottom of stack
+		 * return stack
+		 */
+	}
 
 }
