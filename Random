@@ -1,4 +1,36 @@
+/*Random Dice class
+ * 
+ */
 
-public class Random {
+import java.util.Random;
+public class RandomDice {
+	public void Random(/*input from main*/){
+		Random oRandNbr = new Random();
+		String sInput = /*input from main*/;
+		if(sInput == "Roll Dice"){
+		int iDie1 = oRandNbr.nextInt(6)+1;
+		int iDie2 = oRandNbr.nextInt(6)+1;
+		int iMove = iDie1 + iDie2;
+		if(iDie1 == iDie2){
+			System.out.println(iDie1+"and "+ iDie2+ " the total move is " + iMove);
+			//roll again
+			return;
+			if(iDie1 == 1 && iDie2 == 1){
+				System.out.println("Snake eyes");
+			}
+		}else{
+			System.out.println(iDie1+"and "+ iDie2+ " the total move is " + iMove);
+		}
+		}else{
+			/*Shuffle 
+			 * ask for community chest or chance
+			 * len of deck
+			 * shuffle 
+			 * return list of randomly organized numbers
+			 */
+		}
+		//return stuff to main and/or other programs
+	}
 
 }
+
