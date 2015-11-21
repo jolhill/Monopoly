@@ -1,0 +1,11 @@
+
+public class Turn {
+	//Trade
+	//Buy/sell houses
+	//mortgage
+	//roll dice
+	//purchase or pay rent (financial stuff)
+	//pass in iTurn and iTurnstep for methods 
+	//End turn
+
+}
