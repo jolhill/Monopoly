@@ -3,10 +3,11 @@
  */
 
 import java.util.Random;
+//CLASS NAME NEEDS TO MATCH FILE NAME
 public class RandomDice {
-	public void Random(/*input from main*/){
+	public void Random(String sAction){
 		Random oRandNbr = new Random();
-		String sInput = /*input from main*/;
+		String sInput = sAction;
 		if(sInput == "Roll Dice"){
 		int iDie1 = oRandNbr.nextInt(6)+1;
 		int iDie2 = oRandNbr.nextInt(6)+1;
@@ -18,6 +19,7 @@ public class RandomDice {
 			if(iDie1 == 1 && iDie2 == 1){
 				System.out.println("Snake eyes");
 			}
+		//MAKE INDENTATIONS LINE UP RIGHT
 		}else{
 			System.out.println(iDie1+"and "+ iDie2+ " the total move is " + iMove);
 		}
