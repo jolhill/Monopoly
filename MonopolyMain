@@ -17,46 +17,95 @@ public class MonopolyMain {
 
 		
 		/*
+				//
 		Properties oGo = new Properties(0,"Go",0,0,0,0,0,0,0,0,0,0);
-		Properties oMediterraneanAve = new Properties(1,"Mediterranean Avenue",60,2,10,30,90,160,250,30,50,50);
-		Properties oCommunityChest = new Properties(2,"Community Chest",0,0,0,0,0,0,0,0,0,0);
-		Properties oBalticAvenue = new Properties(3,"Baltic Avenue",60,4,20,60,180,320,450,30,50,50);
-		Properties oIncomeTax = new Properties(4,"Income Tax",0,0,0,0,0,0,0,0,0,0);
-		Properties oReadingRailroad = new Properties(5,"Reading Railroad",200,25,25,50,100,200,200,100,0,0);
-		Properties oOrientalAvenue = new Properties(6,"Oriental Avenue",100,6,30,90,270,400,550,50,50,50);
+		//
+		
+		
+		Properties oMediterraneanAve = new Properties(1,"Mediterranean Avenue",60,2,10,30,90,160,250,30,50,50,1);
+		
+		//
+		Properties oCommunityChest = new Properties(2,"Community Chest",0,0,0,0,0,0,0,0,0,0,0);
+		//
+		
+		Properties oBalticAvenue = new Properties(3,"Baltic Avenue",60,4,20,60,180,320,450,30,50,50,1);
+		
+		//
+		Properties oIncomeTax = new Properties(4,"Income Tax",0,0,0,0,0,0,0,0,0,0,0);
+		//
+		
+		Properties oReadingRailroad = new Properties(5,"Reading Railroad",200,25,25,50,100,200,200,100,0,0,9);
+		Properties oOrientalAvenue = new Properties(6,"Oriental Avenue",100,6,30,90,270,400,550,50,50,50,2);
+		
+		//
 		Properties oChance = new Properties(7,"Chance",0,0,0,0,0,0,0,0,0,0);
-		Properties oVermontAvenue = new Properties(8,"Vermont Avenue",100,6,30,90,270,400,550,50,50,50);
-		Properties oConnecticutAvenue = new Properties(9,"Connenecticut Avenue",120,8,40,100,300,450,600,60,50,50);
+		//
+		
+		Properties oVermontAvenue = new Properties(8,"Vermont Avenue",100,6,30,90,270,400,550,50,50,50,2);
+		Properties oConnecticutAvenue = new Properties(9,"Connenecticut Avenue",120,8,40,100,300,450,600,60,50,50,2);
+		
+		//
 		Properties oJail = new Properties(10,"Jail",0,0,0,0,0,0,0,0,0,0);
-		Properties oStCharlesPlace = new Properties(11,"St. Charles Place",140,10,50,150,450,625,750,70,100,100);
-		Properties oElectricCompany = new Properties(12,"Electric Company",150,0,0,0,0,0,0,75,0,0);//1 owned 4x the dice, both owned 10x the dice
-		Properties oStatesAvenue = new Properties(13,"States Avenue",140,10,50,150,450,625,750,70,100,100);
-		Properties oVirginiaAvenue = new Properties(14,"Virginia Avenue",160,12,60,180,500,700,900,80,100,100);
-		Properties oPennsylvaniaRailroad = new Properties(15,"Pennsylvania Railroad",200,25,25,50,100,200,200,100,0,0);
-		Properties oStJamesPlace = new Properties(16,"St. James Place",180,14,70,200,550,750,950,90,100,100);
+		//
+		
+		Properties oStCharlesPlace = new Properties(11,"St. Charles Place",140,10,50,150,450,625,750,70,100,100,3);
+		Properties oElectricCompany = new Properties(12,"Electric Company",150,0,0,0,0,0,0,75,0,010);//1 owned 4x the dice, both owned 10x the dice
+		Properties oStatesAvenue = new Properties(13,"States Avenue",140,10,50,150,450,625,750,70,100,100,3);
+		Properties oVirginiaAvenue = new Properties(14,"Virginia Avenue",160,12,60,180,500,700,900,80,100,100,3);
+		Properties oPennsylvaniaRailroad = new Properties(15,"Pennsylvania Railroad",200,25,25,50,100,200,200,100,0,0,9);
+		Properties oStJamesPlace = new Properties(16,"St. James Place",180,14,70,200,550,750,950,90,100,100,4);
+		
+		//
 		Properties oCommunityChestTwo = new Properties(17,"Community Chest",0,0,0,0,0,0,0,0,0,0);
-		Properties oTennesseeAvenue = new Properties(18,"Tennessee Avenue",180,14,70,200,550,750,950,90,100,100);
-		Properties oNewYourkAvenue = new Properties(19,"New York Avenue",200,16,80,220,600,800,1000,100,100,100);
+		//
+		
+		Properties oTennesseeAvenue = new Properties(18,"Tennessee Avenue",180,14,70,200,550,750,950,90,100,100,4);
+		Properties oNewYourkAvenue = new Properties(19,"New York Avenue",200,16,80,220,600,800,1000,100,100,100,4);
+		
+		//
 		Properties oFreeParking = new Properties(20,"Free Parking",0,0,0,0,0,0,0,0,0,0);
-		Properties oKentuckyAvenue = new Properties(21,"Kentucky Avenue",220,18,90,250,700,875,1050,110,150,150);
+		//
+		
+		Properties oKentuckyAvenue = new Properties(21,"Kentucky Avenue",220,18,90,250,700,875,1050,110,150,150,5);
+		
+		//
 		Properties oChanceTwo = new Properties(22,"Chance",0,0,0,0,0,0,0,0,0,0);
-		Properties oIndianaAvenue = new Properties(23,"Indiana Avenue",220,18,90,250,700,875,1050,110,150,150);
-		Properties oIllinoisAvenue = new Properties(24,"Illinois Avenue",240,20,100,300,750,925,1100,120,150,150);
-		Properties oBandORailroad = new Properties(25,"B.&O. Railroad",200,25,25,50,100,200,200,100,0,0);
-		Properties oAtlanticAvenue = new Properties(26,"Atlantic Avenue",260,22,110,330,800,975,1150,130,150,150);
-		Properties oVentnorAvenue = new Properties(27,"Ventnor Avenue",260,22,110,330,800,975,1150,130,150,150);
-		Properties oWaterWorks = new Properties(28,"Water Works",150,0,0,0,0,0,0,75,0,0);//1 owned 4x the dice, both owned 10x the dice
-		Properties oMarvinGardens = new Properties(29,"Marvin Gardens",280,24,120,360,850,1025,1200,140,150,150);
+		//
+		
+		Properties oIndianaAvenue = new Properties(23,"Indiana Avenue",220,18,90,250,700,875,1050,110,150,150,5);
+		Properties oIllinoisAvenue = new Properties(24,"Illinois Avenue",240,20,100,300,750,925,1100,120,150,150,5);
+		Properties oBandORailroad = new Properties(25,"B.&O. Railroad",200,25,25,50,100,200,200,100,0,0,9);
+		Properties oAtlanticAvenue = new Properties(26,"Atlantic Avenue",260,22,110,330,800,975,1150,130,150,150,6);
+		Properties oVentnorAvenue = new Properties(27,"Ventnor Avenue",260,22,110,330,800,975,1150,130,150,150,6);
+		Properties oWaterWorks = new Properties(28,"Water Works",150,0,0,0,0,0,0,75,0,0,10);//1 owned 4x the dice, both owned 10x the dice
+		Properties oMarvinGardens = new Properties(29,"Marvin Gardens",280,24,120,360,850,1025,1200,140,150,150,6);
+		
+		//
 		Properties oGoToJail = new Properties(30,"Go To Jail",0,0,0,0,0,0,0,0,0,0);
-		Properties oPacificAvenue = new Properties(31,"Pacific Avenue",300,260,130,390,900,1100,1275,150,200,200);
-		Properties oNorthCarolinaAvenue = new Properties(32,"North Carolina Avenue",300,260,130,390,900,1100,1275,150,200,200);
+		//
+		
+		Properties oPacificAvenue = new Properties(31,"Pacific Avenue",300,260,130,390,900,1100,1275,150,200,200,7);
+		Properties oNorthCarolinaAvenue = new Properties(32,"North Carolina Avenue",300,260,130,390,900,1100,1275,150,200,200,7);
+		
+		//
 		Properties oCommunityChestThree = new Properties(33,"Community Chest",0,0,0,0,0,0,0,0,0,0);
-		Properties oPennsylvaniaAvenue = new Properties(34,"Pennsylvania Avenue",320,28,150,450,1000,1200,1400,160,200,200);
-		Properties oShortLine = new Properties(35,"Short Line",200,25,25,50,100,200,200,100,0,0);
+		//
+		
+		Properties oPennsylvaniaAvenue = new Properties(34,"Pennsylvania Avenue",320,28,150,450,1000,1200,1400,160,200,200,7);
+		Properties oShortLine = new Properties(35,"Short Line",200,25,25,50,100,200,200,100,0,0,9);
+		
+		//
 		Properties oChanceThree = new Properties(36,"Chance",0,0,0,0,0,0,0,0,0,0);
-		Properties oParkPlace = new Properties(37,"Park Place",350,35,175,500,1100,1300,1500,175,200,200);
+		//
+		
+		Properties oParkPlace = new Properties(37,"Park Place",350,35,175,500,1100,1300,1500,175,200,200,8);
+		
+		//
 		Properties oLuxuryTax = new Properties(38,"Luxary Tax",0,0,0,0,0,0,0,0,0,0);
-		Properties oBoardWalk = new Properties(39,"Boardwalk",400,50,200,600,1400,1700,2000,200,200,200);
+		//
+		
+		Properties oBoardWalk = new Properties(39,"Boardwalk",400,50,200,600,1400,1700,2000,200,200,200,8);
+
 		 */
 		/*
 		Properties.propertiesSetup();
