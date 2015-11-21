@@ -6,14 +6,22 @@ public class Players {
 	private int iPlayerID;
 	private int iMoney;
 	private int iBoardPosition;
+	private int [] oPropOwnership = new int[40];
+
 	//Property ownership under each individual property
 	
 	
 	//The void is not in the example in the book, but it was needed to get the IDE to shut up
-	public Players(String sPlayer)
+	public Players(String sPlayer,int iPlayerID)
 	{
 		//Need to verify inputs to not allow null for player name (pressed cancel)
 		this.sPlayer=sPlayer;
+		iMoney = 1500;
+		iBoardPosition = 0;
+		this.iPlayerID = iPlayerID;
+		for(int i = 0;i<=40;i++){
+			oPropOwnership[i] = 0;
+		}
 		
 	}
 	
@@ -53,29 +61,29 @@ public class Players {
 			if(iNumPlayers==2)
 			{
 				String sPlayer1Name = JOptionPane.showInputDialog(null,"Please enter player 1's name: ");
-				Players oPlayer1 = new Players(sPlayer1Name);
+				Players oPlayer1 = new Players(sPlayer1Name,1);
 				String sPlayer2Name = JOptionPane.showInputDialog(null,"Please enter player 2's name: ");
-				Players oPlayer2 = new Players(sPlayer2Name);
+				Players oPlayer2 = new Players(sPlayer2Name,2);
 			}
 			else if(iNumPlayers==3)
 			{
 				String sPlayer1Name = JOptionPane.showInputDialog(null,"Please enter player 1's name: ");
-				Players oPlayer1 = new Players(sPlayer1Name);
+				Players oPlayer1 = new Players(sPlayer1Name,1);
 				String sPlayer2Name = JOptionPane.showInputDialog(null,"Please enter player 2's name: ");
-				Players oPlayer2 = new Players(sPlayer2Name);
+				Players oPlayer2 = new Players(sPlayer2Name,2);
 				String sPlayer3Name = JOptionPane.showInputDialog(null,"Please enter player 3's name: ");
-				Players oPlayer3 = new Players(sPlayer3Name);
+				Players oPlayer3 = new Players(sPlayer3Name,3);
 			}
 			else
 			{
 				String sPlayer1Name = JOptionPane.showInputDialog(null,"Please enter player 1's name: ");
-				Players oPlayer1 = new Players(sPlayer1Name);
+				Players oPlayer1 = new Players(sPlayer1Name,1);
 				String sPlayer2Name = JOptionPane.showInputDialog(null,"Please enter player 2's name: ");
-				Players oPlayer2 = new Players(sPlayer2Name);
+				Players oPlayer2 = new Players(sPlayer2Name,2);
 				String sPlayer3Name = JOptionPane.showInputDialog(null,"Please enter player 3's name: ");
-				Players oPlayer3 = new Players(sPlayer3Name);
+				Players oPlayer3 = new Players(sPlayer3Name,3);
 				String sPlayer4Name = JOptionPane.showInputDialog(null,"Please enter player 4's name: ");
-				Players oPlayer4 = new Players(sPlayer3Name);
+				Players oPlayer4 = new Players(sPlayer4Name,4);
 			}
 			
 		}
