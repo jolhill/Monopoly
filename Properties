@@ -1,4 +1,3 @@
-
 public class Properties {
 	
 	private int iSpace;
@@ -13,6 +12,7 @@ public class Properties {
 	private int iMortgage;
 	private int iHouseCost;
 	private int iHotelCost;
+	private int iMonopoly;
 
 	public Properties()
 	{	
@@ -28,9 +28,12 @@ public class Properties {
 		iMortgage = 0;
 		iHouseCost = 0;
 		iHotelCost = 0;
+		iMonopoly = 0;
 	}
 	
-	public Properties(int iSpace, String sName, int iCost, int iRent, int iOneHouse, int iTwoHouse, int iThreeHouse, int iFourHouse, int iHotel, int iMortgage, int iHouseCost, int iHotelCost)
+	public Properties(int iSpace, String sName, int iCost, int iRent, int iOneHouse, 
+			int iTwoHouse, int iThreeHouse, int iFourHouse, int iHotel, int iMortgage, 
+			int iHouseCost, int iHotelCost, int iMonopoly)
 	{
 		this.iSpace = iSpace;
 		this.sName = sName;
@@ -44,6 +47,8 @@ public class Properties {
 		this.iMortgage = iMortgage;
 		this.iHouseCost = iHouseCost;
 		this.iHotelCost = iHotelCost;
+		this.iMonopoly = iMonopoly;
+	
 	}
 	
 	public void setiSpace(int iSpace)
@@ -165,4 +170,12 @@ public class Properties {
 	{
 		return iHotelCost;
 	}
-}
+	public void setiMonopoly(int iMonopoly)
+	{
+		this.iMonopoly = iMonopoly;
+	}
+	
+	public int getiMonopoly()
+	{
+		return iMonopoly;
+	}
