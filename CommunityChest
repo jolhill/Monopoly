@@ -1,18 +1,53 @@
 
 public class CommunityChest {
+	public class CommunityChest {
 	public void Chest(){
-		/*dictionary of cards each assigned a number
-		 * [0:"Grand opera opening", 1:"second prize", 2:"inherit $100", 3:"Street Repairs", 4: "GO TO JAIL!", 5:"School Tax", 6: "Sell of Stocks", 7:"Get OUT of JAil Free", 8:"Life Insurance", 9:"Tax Refund", 10: "Bank Error", 11:"Receive for Service", 12:"Pay Hospital", 13:"Advance to GO!", 14:"Doctor's Fee", 15:"Xmas Funds"]
-		 *input list of numbers organized randomly  = stack
-		 *return stack
-		 *
-		 * draw = Something.getnext(card);
-		 * if(card != 7){
-		 * do card effect
-		 * }else{give card to player}
-		 * put used card on bottom of stack
-		 * return stack
-		 */
+		Scanner oScan = new Scanner(System.in);
+		//input iChestRand[]
+		int x =0;
+		System.out.print("Do you draw? (Yes or No)  ");
+		String sIN = oScan.next();
+		if (sIN.equalsIgnoreCase("yes")){
+			boolean Draw = true;
+		}
+		while(Draw == true){
+			//ichestrand[x] = card;
+			if(card == 0){
+				
+			}else if (card == 1){
+				
+			}else if (card == 2){
+				
+			}else if(card == 3){
+				
+			}else if (card == 4){
+				
+			}else if (card == 5){
+				
+			}else if(card == 6){
+				
+			}else if(card == 7){
+				
+			}else if(card == 8){
+				
+			}else if(card == 9){
+				
+			}else if(card == 10){
+				
+			}else if(card == 11){
+				
+			}else if(card == 12){
+				
+			}else if(card == 13){
+				
+			}else if(card == 14){
+				
+			}
+			x = x+1;
+			Draw = false;
+		}
 	}
+
+
 
 }
