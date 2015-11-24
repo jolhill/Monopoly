@@ -1,38 +1,71 @@
-/*Random Dice class
+/*Random Dice class 
  * 
  */
-
+ 
 import java.util.Random;
-//CLASS NAME NEEDS TO MATCH FILE NAME
-public class RandomDice {
-	public void Random(String sAction){
+import java.util.Scanner;
+public class Randoms {
+	public void Random(){
 		Random oRandNbr = new Random();
-		String sInput = sAction;
-		if(sInput == "Roll Dice"){
-		int iDie1 = oRandNbr.nextInt(6)+1;
-		int iDie2 = oRandNbr.nextInt(6)+1;
-		int iMove = iDie1 + iDie2;
-		if(iDie1 == iDie2){
-			System.out.println(iDie1+"and "+ iDie2+ " the total move is " + iMove);
-			//roll again
-			return;
-			if(iDie1 == 1 && iDie2 == 1){
+		Scanner oScan = new Scanner(System.in);
+		System.out.print("Roll Dice or shuffle");
+		String sInput = oScan.next();
+		if(sInput.equalsIgnoreCase("roll dice")){
+			int iDie1 = oRandNbr.nextInt(6)+1;
+			int iDie2 = oRandNbr.nextInt(6)+1;
+			int iMove = iDie1 + iDie2;
+			if(iDie1 == iDie2){
+				System.out.println(iDie1+"and "+ iDie2+ " the total move is " + iMove);
+				//roll again
+				//return iDie1;
+				//return iDie2;
+				//return iMove;
+				if(iDie1 == 1 && iDie2 == 1){
 				System.out.println("Snake eyes");
+				}
+			}else{
+				System.out.println(iDie1+"and "+ iDie2+ " the total move is " + iMove);
+				//return iDie1;
+				//return iDie2;
+				//return iMove;
 			}
-		//MAKE INDENTATIONS LINE UP RIGHT
 		}else{
-			System.out.println(iDie1+"and "+ iDie2+ " the total move is " + iMove);
-		}
-		}else{
-			/*Shuffle 
-			 * ask for community chest or chance
-			 * len of deck
-			 * shuffle 
-			 * return list of randomly organized numbers
-			 */
+			//Shuffle
+			System.out.print("Would you like to shuffle the Community Chest or Chance?  ");
+			String sIn = oScan.next();
+			if (sIn.equalsIgnoreCase("community chest")){
+				int[] iChestRand;
+				iChestRand = new int[15];
+				for(int i = 0; i< iChestRand.length;){
+					int iRand = oRandNbr.nextInt(15);
+					for(int x=0; x<=i;){
+						if (iRand == iChestRand[x]){
+							break
+						}else{
+							iChestRand[x] = iRand;
+						}
+						x = x+1;
+					}
+					i = i +1;
+				}
+			}else{
+				int[] iChanceRand;
+				iChanceRand = new int[/*length of chance*/];
+				for(int i = 0; i< iChanceRand.length;){
+					int iRand = oRandNbr.nextInt(/*length of chance*/);
+					for(int x=0; x<=i;){
+						if (iRand == iChanceRand[x]){
+							break
+						}else{
+							iChanceRand[x] = iRand;
+						}
+						x = x+1;
+					}
+					i = i +1;
+				}
+			}
 		}
 		//return stuff to main and/or other programs
 	}
 
 }
-
