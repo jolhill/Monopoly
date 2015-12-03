@@ -1,21 +1,23 @@
-
 public class MonopolyMain {
 
-	private static int iTurn;
-	private static int iTurnStep;
 	//trade,buy/sell houses, morgage/unmorgage, roll, buy/pay rent for property/financial handling for debt (while inDebt:)
 	//iTurn++ (iTurn modular for # of Players, whereas iTurnStep is modular for # of options per player turn)
 	//iTurn corresponds with player ID
 	
 	
 	public static void main(String[] args) {
-		iTurn = 0;
-		iTurnStep = 0;
+		
 		
 		Players [] aPlayers = setup.playerSetup();
 		System.out.println(aPlayers[0].toString());
 		System.out.println(aPlayers[1].toString());
-
+		
+		Turn turn = new Turn();
+		System.out.println(turn.toString());
+		turn.incrementTurn(aPlayers.length);
+		System.out.println(turn.toString());
+		
+		/*
 		Properties [] aBoard = setup.propertiesSetup();
 		System.out.println("Property: " + aBoard[1].getsName());
 		System.out.println("Cost: " + aBoard[1].getiCost());
@@ -28,7 +30,7 @@ public class MonopolyMain {
 		System.out.println("Mortgage: " + aBoard[1].getiMortgage());
 		System.out.println("House Cost: " + aBoard[1].getiHouseCost());
 		System.out.println("Hotel Cost: " + aBoard[1].getiHotelCost());
-		
+		*/
 	}
 	
 	
