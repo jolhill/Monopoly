@@ -5,7 +5,45 @@ public class Turn {
 	//mortgage
 	//roll dice
 	//purchase or pay rent (financial stuff)
-	//pass in iTurn and iTurnstep for methods 
-	//End turn
+
+	private int iTurn;
+	private int iTurnStep;
+	
+	public Turn(){
+		iTurn = 0;
+		iTurnStep = 0;
+	}
+	public void setTurn(int iNumPlayers,int turn){
+		iTurn = turn;
+		if(iTurn >= iNumPlayers){
+			iTurn = 0;
+		}
+	}
+	public void incrementTurn(int iNumPlayers){
+		iTurn++;
+		if(iTurn >= iNumPlayers){
+			iTurn = 0;
+		}
+	}
+	public int getTurn(){
+		return iTurn;
+	}
+	
+	public void setTurnStep(int iNumSteps,int turnStep){
+		iTurnStep = turnStep;
+	}
+	public void incrementTurnStep(int iNumSteps){
+		iTurnStep++;
+		if(iTurn >= iNumSteps){
+			iTurn++;
+			iTurnStep = 0;
+		}
+	}
+	public int getTurnStep(){
+		return iTurnStep;
+	}
+	public String toString(){
+		return("It is currently player " + (iTurn+1)+ "'s turn.");
+	}
 
 }
