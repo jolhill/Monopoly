@@ -45,5 +45,12 @@ public class Turn {
 	public String toString(){
 		return("It is currently player " + (iTurn+1)+ "'s turn.");
 	}
+	
+	
+	public Players [] transferMoney(int amount,int player1ID,int player2ID,Players [] aPlayers){
+		aPlayers[player1ID].setMoney(aPlayers[player1ID].getPlayerMoney()-amount);
+		aPlayers[player2ID].setMoney(aPlayers[player2ID].getPlayerMoney()+amount);
+		return aPlayers;
+	}
 
 }
