@@ -1,3 +1,4 @@
+
 public class MonopolyMain {
 
 	//trade,buy/sell houses, morgage/unmorgage, roll, buy/pay rent for property/financial handling for debt (while inDebt:)
@@ -16,6 +17,10 @@ public class MonopolyMain {
 		System.out.println(turn.toString());
 		turn.incrementTurn(aPlayers.length);
 		System.out.println(turn.toString());
+		//Transfers $500 from player 1 (index 0) to player 2 (index 1)
+		aPlayers = turn.transferMoney(500,0,1,aPlayers);
+		System.out.println(aPlayers[0].toString());
+		System.out.println(aPlayers[1].toString());
 		
 		/*
 		Properties [] aBoard = setup.propertiesSetup();
