@@ -1,71 +1,34 @@
-/*Random Dice class 
+/*Random class
  * 
  */
  
-import java.util.Random;
-import java.util.Scanner;
+import java.util.Random; 
 public class Randoms {
-	public void Random(){
-		Random oRandNbr = new Random();
-		Scanner oScan = new Scanner(System.in);
-		System.out.print("Roll Dice or shuffle");
-		String sInput = oScan.next();
-		if(sInput.equalsIgnoreCase("roll dice")){
-			int iDie1 = oRandNbr.nextInt(6)+1;
-			int iDie2 = oRandNbr.nextInt(6)+1;
-			int iMove = iDie1 + iDie2;
-			if(iDie1 == iDie2){
-				System.out.println(iDie1+"and "+ iDie2+ " the total move is " + iMove);
-				//roll again
-				//return iDie1;
-				//return iDie2;
-				//return iMove;
-				if(iDie1 == 1 && iDie2 == 1){
-				System.out.println("Snake eyes");
-				}
-			}else{
-				System.out.println(iDie1+"and "+ iDie2+ " the total move is " + iMove);
-				//return iDie1;
-				//return iDie2;
-				//return iMove;
-			}
-		}else{
-			//Shuffle
-			System.out.print("Would you like to shuffle the Community Chest or Chance?  ");
-			String sIn = oScan.next();
-			if (sIn.equalsIgnoreCase("community chest")){
-				int[] iChestRand;
-				iChestRand = new int[15];
-				for(int i = 0; i< iChestRand.length;){
-					int iRand = oRandNbr.nextInt(15);
-					for(int x=0; x<=i;){
-						if (iRand == iChestRand[x]){
-							break
-						}else{
-							iChestRand[x] = iRand;
-						}
-						x = x+1;
-					}
-					i = i +1;
-				}
-			}else{
-				int[] iChanceRand;
-				iChanceRand = new int[/*length of chance*/];
-				for(int i = 0; i< iChanceRand.length;){
-					int iRand = oRandNbr.nextInt(/*length of chance*/);
-					for(int x=0; x<=i;){
-						if (iRand == iChanceRand[x]){
-							break
-						}else{
-							iChanceRand[x] = iRand;
-						}
-						x = x+1;
-					}
-					i = i +1;
-				}
-			}
+	Random oRandNbr = new Random();
+	public int [] RandomDice(){
+		
+		int iDie1 = oRandNbr.nextInt(6)+1;
+		int iDie2 = oRandNbr.nextInt(6)+1;
+		int iMove = iDie1 + iDie2;
+		System.out.println(iDie1+" and "+ iDie2+ " the total move is " + iMove);
+		if (iDie1 == 1 && iDie2 == 1){
+			System.out.println("Snake Eyes");
 		}
-		//return stuff to main and/or other programs
+		//roll again
+		int [] aOut = {iDie1,iDie2,iMove}; // array[0..1] ==  each die and array[2] == move amount
+		return aOut;
 	}
+	
+	public int RandomChestint(){
+		int iNumbr = oRandNbr.nextInt(15);
+		return iNumbr;
+	}
+	
+	public int RandomChanceint(){
+		int iNumbr = oRandNbr.nextInt(/*number of cards in chance*/);
+		return iNumbr;
+	}
+		
+	
 
 }
