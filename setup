@@ -62,7 +62,7 @@ public class setup {
 	}
 	
 	public static Properties [] propertiesSetup(){
-		Properties oGo = new Properties(0,"Go",0,0,0,0,0,0,0,0,0,0);
+		Properties oGo = new Properties(0,"Go",0,0,0,0,0,0,0,0,0,0,0);
 		//
 		
 		
@@ -82,38 +82,38 @@ public class setup {
 		Properties oOrientalAvenue = new Properties(6,"Oriental Avenue",100,6,30,90,270,400,550,50,50,50,2);
 		
 		//
-		Properties oChance = new Properties(7,"Chance",0,0,0,0,0,0,0,0,0,0);
+		Properties oChance = new Properties(7,"Chance",0,0,0,0,0,0,0,0,0,0,0);
 		//
 		
 		Properties oVermontAvenue = new Properties(8,"Vermont Avenue",100,6,30,90,270,400,550,50,50,50,2);
 		Properties oConnecticutAvenue = new Properties(9,"Connenecticut Avenue",120,8,40,100,300,450,600,60,50,50,2);
 		
 		//
-		Properties oJail = new Properties(10,"Jail",0,0,0,0,0,0,0,0,0,0);
+		Properties oJail = new Properties(10,"Jail",0,0,0,0,0,0,0,0,0,0,0);
 		//
 		
 		Properties oStCharlesPlace = new Properties(11,"St. Charles Place",140,10,50,150,450,625,750,70,100,100,3);
-		Properties oElectricCompany = new Properties(12,"Electric Company",150,0,0,0,0,0,0,75,0,010);//1 owned 4x the dice, both owned 10x the dice
+		Properties oElectricCompany = new Properties(12,"Electric Company",150,0,0,0,0,0,0,75,0,0,10);//1 owned 4x the dice, both owned 10x the dice
 		Properties oStatesAvenue = new Properties(13,"States Avenue",140,10,50,150,450,625,750,70,100,100,3);
 		Properties oVirginiaAvenue = new Properties(14,"Virginia Avenue",160,12,60,180,500,700,900,80,100,100,3);
 		Properties oPennsylvaniaRailroad = new Properties(15,"Pennsylvania Railroad",200,25,25,50,100,200,200,100,0,0,9);
 		Properties oStJamesPlace = new Properties(16,"St. James Place",180,14,70,200,550,750,950,90,100,100,4);
 		
 		//
-		Properties oCommunityChestTwo = new Properties(17,"Community Chest",0,0,0,0,0,0,0,0,0,0);
+		Properties oCommunityChestTwo = new Properties(17,"Community Chest",0,0,0,0,0,0,0,0,0,0,0);
 		//
 		
 		Properties oTennesseeAvenue = new Properties(18,"Tennessee Avenue",180,14,70,200,550,750,950,90,100,100,4);
 		Properties oNewYourkAvenue = new Properties(19,"New York Avenue",200,16,80,220,600,800,1000,100,100,100,4);
 		
 		//
-		Properties oFreeParking = new Properties(20,"Free Parking",0,0,0,0,0,0,0,0,0,0);
+		Properties oFreeParking = new Properties(20,"Free Parking",0,0,0,0,0,0,0,0,0,0,0);
 		//
 		
 		Properties oKentuckyAvenue = new Properties(21,"Kentucky Avenue",220,18,90,250,700,875,1050,110,150,150,5);
 		
 		//
-		Properties oChanceTwo = new Properties(22,"Chance",0,0,0,0,0,0,0,0,0,0);
+		Properties oChanceTwo = new Properties(22,"Chance",0,0,0,0,0,0,0,0,0,0,0);
 		//
 		
 		Properties oIndianaAvenue = new Properties(23,"Indiana Avenue",220,18,90,250,700,875,1050,110,150,150,5);
@@ -125,27 +125,27 @@ public class setup {
 		Properties oMarvinGardens = new Properties(29,"Marvin Gardens",280,24,120,360,850,1025,1200,140,150,150,6);
 		
 		//
-		Properties oGoToJail = new Properties(30,"Go To Jail",0,0,0,0,0,0,0,0,0,0);
+		Properties oGoToJail = new Properties(30,"Go To Jail",0,0,0,0,0,0,0,0,0,0,0);
 		//
 		
 		Properties oPacificAvenue = new Properties(31,"Pacific Avenue",300,260,130,390,900,1100,1275,150,200,200,7);
 		Properties oNorthCarolinaAvenue = new Properties(32,"North Carolina Avenue",300,260,130,390,900,1100,1275,150,200,200,7);
 		
 		//
-		Properties oCommunityChestThree = new Properties(33,"Community Chest",0,0,0,0,0,0,0,0,0,0);
+		Properties oCommunityChestThree = new Properties(33,"Community Chest",0,0,0,0,0,0,0,0,0,0,0);
 		//
 		
 		Properties oPennsylvaniaAvenue = new Properties(34,"Pennsylvania Avenue",320,28,150,450,1000,1200,1400,160,200,200,7);
 		Properties oShortLine = new Properties(35,"Short Line",200,25,25,50,100,200,200,100,0,0,9);
 		
 		//
-		Properties oChanceThree = new Properties(36,"Chance",0,0,0,0,0,0,0,0,0,0);
+		Properties oChanceThree = new Properties(36,"Chance",0,0,0,0,0,0,0,0,0,0,0);
 		//
 		
 		Properties oParkPlace = new Properties(37,"Park Place",350,35,175,500,1100,1300,1500,175,200,200,8);
 		
 		//
-		Properties oLuxuryTax = new Properties(38,"Luxary Tax",0,0,0,0,0,0,0,0,0,0);
+		Properties oLuxuryTax = new Properties(38,"Luxary Tax",0,0,0,0,0,0,0,0,0,0,0);
 		//
 		
 		Properties oBoardWalk = new Properties(39,"Boardwalk",400,50,200,600,1400,1700,2000,200,200,200,8);
