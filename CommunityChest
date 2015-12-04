@@ -1,53 +1,28 @@
+/*takes a number in
+ * that number is called for position in an array
+ * returns the value stored in that array position
+ * use for community chest
+ */
 
+
+import java.util.Scanner;
+	
 public class CommunityChest {
-	public class CommunityChest {
-	public void Chest(){
-		Scanner oScan = new Scanner(System.in);
-		//input iChestRand[]
-		int x =0;
-		System.out.print("Do you draw? (Yes or No)  ");
-		String sIN = oScan.next();
-		if (sIN.equalsIgnoreCase("yes")){
-			boolean Draw = true;
-		}
-		while(Draw == true){
-			//ichestrand[x] = card;
-			if(card == 0){
-				
-			}else if (card == 1){
-				
-			}else if (card == 2){
-				
-			}else if(card == 3){
-				
-			}else if (card == 4){
-				
-			}else if (card == 5){
-				
-			}else if(card == 6){
-				
-			}else if(card == 7){
-				
-			}else if(card == 8){
-				
-			}else if(card == 9){
-				
-			}else if(card == 10){
-				
-			}else if(card == 11){
-				
-			}else if(card == 12){
-				
-			}else if(card == 13){
-				
-			}else if(card == 14){
-				
-			}
-			x = x+1;
-			Draw = false;
+	int Chest[];
+	public CommunityChest(){
+		Chest = new int[15];
+		int in = 1;
+		for(int i = 0; i< Chest.length; i++){
+			Chest[i] = in;
+			in += 1;
 		}
 	}
-
-
+	public int Decide(int iNumbr){
+		int iCardNmbr = iNumbr;
+		return Chest[iCardNmbr];
+		
+		
+	}
+		
 
 }
