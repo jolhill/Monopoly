@@ -22,9 +22,16 @@ public class MonopolyMain {
 		System.out.println(aPlayers[0].toString());
 		System.out.println(aPlayers[1].toString());
 		
-		/*
 		Properties [] aBoard = setup.propertiesSetup();
-		System.out.println("Property: " + aBoard[1].getsName());
+		
+		aPlayers[1].toggleOwnership(13);
+		aPlayers[1].toggleOwnership(15);
+		System.out.println(aPlayers[0].getStrListOfPropsOwned(aBoard));
+		System.out.println(aPlayers[1].getStrListOfPropsOwned(aBoard));
+		
+		
+
+		System.out.println("\nProperty: " + aBoard[1].getsName());
 		System.out.println("Cost: " + aBoard[1].getiCost());
 		System.out.println("Rent: " + aBoard[1].getiRent());
 		System.out.println("1 House: " + aBoard[1].getiOneHouse());
@@ -35,7 +42,6 @@ public class MonopolyMain {
 		System.out.println("Mortgage: " + aBoard[1].getiMortgage());
 		System.out.println("House Cost: " + aBoard[1].getiHouseCost());
 		System.out.println("Hotel Cost: " + aBoard[1].getiHotelCost());
-		*/
 	}
 	
 	
