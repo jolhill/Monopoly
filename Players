@@ -5,7 +5,7 @@ public class Players {
 	private int iPlayerID;
 	private int iMoney;
 	private int iBoardPosition;
-	private int [] oPropOwnership = new int[40];
+	private boolean [] oPropOwnership = new boolean[40];
 
 	//Property ownership under each individual property
 	
@@ -19,7 +19,7 @@ public class Players {
 		setBoardPosition(0);
 		setPlayerID(iPlayerID);
 		for(int i = 0;i < 40;i++){
-			setOwnerShip(i,0);
+			setOwnerShip(i,false);
 		}
 		
 	}
@@ -36,8 +36,16 @@ public class Players {
 	public void setPlayerID(int ID){
 		iPlayerID = ID;
 	}
-	public void setOwnerShip(int iProp,int iStatus){
+	public void setOwnerShip(int iProp,boolean iStatus){
 		oPropOwnership[iProp] = iStatus;
+	}
+	public void toggleOwnership(int iProp){
+		if(oPropOwnership[iProp] == false){
+			oPropOwnership[iProp] = true;
+		}
+		else{
+			oPropOwnership[iProp] = false;
+		}
 	}
 	//Accessors
 	public String getPlayerName(){
@@ -52,12 +60,55 @@ public class Players {
 	public int getBoardPosition(){
 		return(iBoardPosition);
 	}
-	public int [] getOwnership(){
+	public boolean [] getOwnership(){
 		return(oPropOwnership);
+	}
+	public boolean getOwnership(int iProp){
+		return(oPropOwnership[iProp]);
 	}
 	
 	public String toString(){
 		return(getPlayerName()+" "+getPlayerID()+ " "+ getPlayerMoney()+ " "+getBoardPosition());
+	}
+	
+	public int [] getOwnedProperties(){
+		int iNumOwned = 0;
+		for(int i = 0; i < oPropOwnership.length; i++){
+			if(oPropOwnership[i]){
+				iNumOwned++;
+			}
+		}
+		int [] aOwned = new int[iNumOwned];
+		int iIndex = 0;
+		for(int i = 0; i < oPropOwnership.length; i++){
+			if(oPropOwnership[i]){
+				aOwned[iIndex] = i;
+				iIndex++;
+			}
+		}
+		return(aOwned);
+	}
+	public String [] getOwnedPropertiesStrArray(Properties [] aBoard){
+		int [] aOwned = getOwnedProperties();
+		String [] sOwned = new String[aOwned.length];
+		for(int i = 0; i < aOwned.length; i ++){
+			sOwned[i] = aBoard[aOwned[i]].getsName();
+		}
+		return(sOwned);
+	}
+	public String strArrayToString(String [] array){
+		String out = "";
+		for(int i = 0; i < array.length; i++){
+			System.out.print(array[i] + ",");
+		}
+		if(out.length() == 0){
+			out += "No Properties";
+		}
+		return out;
+	}
+	public String getStrListOfPropsOwned(Properties [] aBoard){
+		String out = (strArrayToString(getOwnedPropertiesStrArray(aBoard))+" are owned by "+sPlayer);
+		return(out);
 	}
 
 }
