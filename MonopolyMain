@@ -15,13 +15,29 @@ public class MonopolyMain {
 		boolean bDone = false;
 		while(!bDone){
 			
-			//Rolls the dice and moves the player
+			//Rolls dice + appropriate response to roll
 			boolean bDoubles = false;
+			int iDoublesCount = 0;
 			do{
 				int [] aRoll = Randoms.RandomDice();
-				aPlayers[turn.getTurn()].moveForward(aRoll[2]);
 				if(aRoll[0]==aRoll[1]){
-				bDoubles = true;	
+				bDoubles = true;
+				iDoublesCount++;
+				}
+				if(iDoublesCount == 3){
+					aPlayers[turn.getTurn()].setBoardPosition(30);
+					break;
+				}
+				if(aPlayers[turn.getTurn()].getJailStatus()){
+					if(bDoubles){
+						aPlayers[turn.getTurn()].toggleJail();
+					}
+					else{
+						aPlayers[turn.getTurn()].turnInJail();
+					}
+				}
+				else{
+				aPlayers[turn.getTurn()].moveForward(aRoll[2]);
 				}
 			}while(bDoubles);
 			turn.incrementTurnStep();
@@ -29,16 +45,24 @@ public class MonopolyMain {
 			//Checks for ownership of what they landed on
 			aPlayers[turn.getTurn()].getBoardPosition();
 			boolean bOwned = false;
+			//Possibly an issue, but probably fine, if I don't give it an initial value, 
+			//later it says that it may not have been initialized
+			int iOwnerID = 0;
 			for(int i = 0; i < aPlayers.length; i ++){
 				int [] aPropsOwned = aPlayers[i].getOwnedProperties();
 				for(int j = 0; j < aPlayers.length; j++){
 					if(aPropsOwned[j] == aPlayers[turn.getTurn()].getBoardPosition()){
 						bOwned = true;
+						iOwnerID = i;
 					}
 				}
 			}
 			if(bOwned){
-				//"Pay player 1 $100!" 
+				//if not owned by player{
+					//GET REAL AMOUNT
+					int amount = 100;
+					turn.transferMoney(amount, turn.getTurn(), iOwnerID, aPlayers);
+				//}
 			}
 			else{
 				System.out.println("Would you like to buy this property?");
