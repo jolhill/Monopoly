@@ -9,9 +9,9 @@ import java.util.Random;
 public class CommunityChest {
 	Random oRandom = new Random();
 	
-	public Players [] card(Players [] aPlayers, int iPlayersID){
+	public Players [] card(Players [] aPlayers, int iPlayersID, Properties [] aBoard){
 		
-		int iCard = (oRandom.nextInt(15) + 1);
+		int iCard = (oRandom.nextInt(14) + 1);
 		
 		if(iCard == 1)
 			card1(aPlayers[iPlayersID]);
@@ -39,112 +39,98 @@ public class CommunityChest {
 			card12(aPlayers[iPlayersID]);
 		else if(iCard == 13)
 			card13(aPlayers[iPlayersID]);
-		else if(iCard == 14)
-			card14(aPlayers[iPlayersID]);
 		else
-			card15(aPlayers[iPlayersID]);
+			card14(aPlayers[iPlayersID],aBoard);
+		
 		
 		return aPlayers;
 	}
 	
 	public Players card1(Players oPlayer){
-		//WRITE CARD HERE(it should modify the player, and then return the player)
+		oPlayer.setMoney(oPlayer.getPlayerMoney()+100);
+		System.out.println("Inherit $100");
 		return(oPlayer);
 	}
 	public Players card2(Players oPlayer){
-		//WRITE CARD HERE(it should modify the player, and then return the player)
+		oPlayer.setMoney(oPlayer.getPlayerMoney()+100);
+		System.out.println("Life Insurance Matures Collect $100");
 		return(oPlayer);
 	}
 	public Players card3(Players oPlayer){
-		//WRITE CARD HERE(it should modify the player, and then return the player)
+		oPlayer.setMoney(oPlayer.getPlayerMoney()+100);
+		System.out.println("Xmas Funds Matures Collect $100");
 		return(oPlayer);
 	}
 	public Players card4(Players oPlayer){
-		//WRITE CARD HERE(it should modify the player, and then return the player)
+		oPlayer.setMoney(oPlayer.getPlayerMoney()+200);
+		System.out.println("Bank Error In Your Favor Collect $200");
 		return(oPlayer);
 	}
 	public Players card5(Players oPlayer){
-		//WRITE CARD HERE(it should modify the player, and then return the player)
+		oPlayer.setMoney(oPlayer.getPlayerMoney()+10);
+		System.out.println("You Have Won Second Prize In A Beauty Contest Collect $10");
 		return(oPlayer);
 	}
 	public Players card6(Players oPlayer){
-		//WRITE CARD HERE(it should modify the player, and then return the player)
+		oPlayer.setMoney(oPlayer.getPlayerMoney()+20);
+		System.out.println("Income Tax Refund Collect $20");
 		return(oPlayer);
 	}
 	public Players card7(Players oPlayer){
-		//WRITE CARD HERE(it should modify the player, and then return the player)
+		oPlayer.setMoney(oPlayer.getPlayerMoney()+25);
+		System.out.println("Receive For Services $25");
 		return(oPlayer);
 	}
 	public Players card8(Players oPlayer){
-		//WRITE CARD HERE(it should modify the player, and then return the player)
+		oPlayer.setMoney(oPlayer.getPlayerMoney()+45);
+		System.out.println("From Sale of Stock You Get $45");
 		return(oPlayer);
 	}
 	public Players card9(Players oPlayer){
-		//WRITE CARD HERE(it should modify the player, and then return the player)
+		oPlayer.setMoney(oPlayer.getPlayerMoney()-150);
+		System.out.println("Pay School Tax of $150");
 		return(oPlayer);
 	}
 	public Players card10(Players oPlayer){
-		//WRITE CARD HERE(it should modify the player, and then return the player)
+		oPlayer.setMoney(oPlayer.getPlayerMoney()-50);
+		System.out.println("Doctor's Fee Pay $50");
 		return(oPlayer);
 	}
 	public Players card11(Players oPlayer){
-		//WRITE CARD HERE(it should modify the player, and then return the player)
+		oPlayer.setMoney(oPlayer.getPlayerMoney()-100);
+		System.out.println("Pay Hospital $100");
 		return(oPlayer);
 	}
 	public Players card12(Players oPlayer){
-		//WRITE CARD HERE(it should modify the player, and then return the player)
+		oPlayer.setBoardPosition(0);
+		System.out.println("Advance To GO (Collect $200)");
 		return(oPlayer);
 	}
 	public Players card13(Players oPlayer){
-		//WRITE CARD HERE(it should modify the player, and then return the player)
+		oPlayer.setBoardPosition(30);
+		System.out.println("Go To Jail");
 		return(oPlayer);
 	}
-	public Players card14(Players oPlayer){
-		//WRITE CARD HERE(it should modify the player, and then return the player)
-		return(oPlayer);
-	}
-	public Players card15(Players oPlayer){
-		//WRITE CARD HERE(it should modify the player, and then return the player)
-		return(oPlayer);
-	}
-	
-}
 
-
-
-
-
-
-
-
-
-
-/*/*takes a number in
- * that number is called for position in an array
- * returns the value stored in that array position
- * use for community chest
- */
-
-
-import java.util.Scanner;
-	
-public class CommunityChest {
-	int Chest[];
-	public CommunityChest(){
-		Chest = new int[15];
-		int in = 1;
-		for(int i = 0; i< Chest.length; i++){
-			Chest[i] = in;
-			in += 1;
+	public Players card14(Players oPlayer,Properties [] aBoard){
+		int [] aOwned = oPlayer.getOwnedProperties();
+		int iTotalHouses = 0;
+		int iTotalHotels = 0;
+		int iTotalCharge = 0;
+		for(int i = 0; i < aOwned.length; i++){
+			int iNumHouses = aBoard[aOwned[i]].getNumHouses();
+			if(iNumHouses == 5){
+				iTotalHotels++;
+			}
+			else{
+				iTotalHouses += iNumHouses;
+			}
+		
 		}
+		iTotalCharge = (40 * iTotalHouses)+(115 * iTotalHotels);
+		oPlayer.setMoney(oPlayer.getPlayerMoney()-iTotalCharge);
+		System.out.println("You Are Assessed For Street $40 Per House $115 per Hotel");
+		return(oPlayer);
 	}
-	public int Decide(int iNumbr){
-		int iCardNmbr = iNumbr;
-		return Chest[iCardNmbr];
-		
-		
-	}
-		
-
+	
 }
-*/
