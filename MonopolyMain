@@ -10,40 +10,38 @@ public class MonopolyMain {
 		
 		
 		Players [] aPlayers = setup.playerSetup();
-		System.out.println(aPlayers[0].toString());
-		System.out.println(aPlayers[1].toString());
-		
-		Turn turn = new Turn();
-		System.out.println(turn.toString());
-		turn.incrementTurn(aPlayers.length);
-		System.out.println(turn.toString());
-		//Transfers $500 from player 1 (index 0) to player 2 (index 1)
-		aPlayers = turn.transferMoney(500,0,1,aPlayers);
-		System.out.println(aPlayers[0].toString());
-		System.out.println(aPlayers[1].toString());
-		
 		Properties [] aBoard = setup.propertiesSetup();
+		Turn turn = new Turn();
+		boolean bDone = false;
+		while(!bDone){
+			//Rools the dice and moves the player
+			int [] aRoll = Randoms.RandomDice();
+			aPlayers[turn.getTurn()].moveForward(aRoll[2]);
+			turn.incrementTurnStep();
+			aPlayers[turn.getTurn()].getBoardPosition();
+			//Checks for ownership of what they landed on
+			boolean bOwned = false;
+			for(int i = 0; i < aPlayers.length; i ++){
+				int [] aPropsOwned = aPlayers[i].getOwnedProperties();
+				for(int j = 0; j < aPlayers.length; j++){
+					if(aPropsOwned[j] == aPlayers[turn.getTurn()].getBoardPosition()){
+						bOwned = true;
+					}
+				}
+			}
+			if(bOwned){
+				//"Pay player 1 $100!" 
+			}
+			else{
+				System.out.println("Would you like to buy this property?");
+				//do methods for that
+			}
+			turn.incrementTurnStep();
+			
+			
+		}
 		
-		aPlayers[1].toggleOwnership(13);
-		aPlayers[1].toggleOwnership(15);
-		System.out.println(aPlayers[0].getStrListOfPropsOwned(aBoard));
-		System.out.println(aPlayers[1].getStrListOfPropsOwned(aBoard));
 		
-		
-
-		System.out.println("\nProperty: " + aBoard[1].getsName());
-		System.out.println("Cost: " + aBoard[1].getiCost());
-		System.out.println("Rent: " + aBoard[1].getiRent());
-		System.out.println("1 House: " + aBoard[1].getiOneHouse());
-		System.out.println("2 Houses: " + aBoard[1].getiTwoHouse());
-		System.out.println("3 Houses: " + aBoard[1].getiThreeHouse());
-		System.out.println("4 Houses: " + aBoard[1].getiFourHouse());
-		System.out.println("Hotel: " + aBoard[1].getiHotel());
-		System.out.println("Mortgage: " + aBoard[1].getiMortgage());
-		System.out.println("House Cost: " + aBoard[1].getiHouseCost());
-		System.out.println("Hotel Cost: " + aBoard[1].getiHotelCost());
 	}
-	
-	
 
 }
