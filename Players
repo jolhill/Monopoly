@@ -6,6 +6,8 @@ public class Players {
 	private int iMoney;
 	private int iBoardPosition;
 	private boolean [] oPropOwnership = new boolean[40];
+	private boolean inJail;
+	private int iTimeInJail;
 
 	//Property ownership under each individual property
 	
@@ -20,6 +22,8 @@ public class Players {
 		setPlayerID(iPlayerID);
 		for(int i = 0;i < 40;i++){
 			setOwnerShip(i,false);
+		inJail = false;
+		iTimeInJail = 0;
 		}
 		
 	}
@@ -47,6 +51,15 @@ public class Players {
 			oPropOwnership[iProp] = false;
 		}
 	}
+	public void toggleJail(){
+		if(inJail == false)
+			inJail = true;
+		else
+			inJail = false;
+	}
+	public boolean getJailStatus(){
+		return inJail;
+	}
 	//Accessors
 	public String getPlayerName(){
 		return(sPlayer);
@@ -65,6 +78,14 @@ public class Players {
 	}
 	public boolean getOwnership(int iProp){
 		return(oPropOwnership[iProp]);
+	}
+	
+	public void turnInJail(){
+		iTimeInJail++;
+		if(iTimeInJail == 3){
+			iTimeInJail = 0;
+			toggleJail();
+		}
 	}
 	
 	public String toString(){
@@ -109,6 +130,13 @@ public class Players {
 	public String getStrListOfPropsOwned(Properties [] aBoard){
 		String out = (strArrayToString(getOwnedPropertiesStrArray(aBoard))+" are owned by "+sPlayer);
 		return(out);
+	}
+	public void moveForward(int iAmount){
+		iBoardPosition += iAmount;
+		if(iBoardPosition >= 40){
+			iBoardPosition -= 40;
+			iMoney += 200;
+		}
 	}
 
 }
