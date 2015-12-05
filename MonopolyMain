@@ -11,15 +11,23 @@ public class MonopolyMain {
 		
 		Players [] aPlayers = setup.playerSetup();
 		Properties [] aBoard = setup.propertiesSetup();
-		Turn turn = new Turn();
+		Turn turn = new Turn(aPlayers.length);
 		boolean bDone = false;
 		while(!bDone){
-			//Rools the dice and moves the player
-			int [] aRoll = Randoms.RandomDice();
-			aPlayers[turn.getTurn()].moveForward(aRoll[2]);
+			
+			//Rolls the dice and moves the player
+			boolean bDoubles = false;
+			do{
+				int [] aRoll = Randoms.RandomDice();
+				aPlayers[turn.getTurn()].moveForward(aRoll[2]);
+				if(aRoll[0]==aRoll[1]){
+				bDoubles = true;	
+				}
+			}while(bDoubles);
 			turn.incrementTurnStep();
-			aPlayers[turn.getTurn()].getBoardPosition();
+			
 			//Checks for ownership of what they landed on
+			aPlayers[turn.getTurn()].getBoardPosition();
 			boolean bOwned = false;
 			for(int i = 0; i < aPlayers.length; i ++){
 				int [] aPropsOwned = aPlayers[i].getOwnedProperties();
