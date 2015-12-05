@@ -9,7 +9,7 @@ import java.util.Random;
 public class CommunityChest {
 	Random oRandom = new Random();
 	
-	public Players [] card(Players [] aPlayers, int iPlayerID){
+	public Players [] card(Players [] aPlayers, int iPlayersID){
 		
 		int iCard = (oRandom.nextInt(15) + 1);
 		
