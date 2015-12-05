@@ -1,17 +1,20 @@
 
 public class Turn {
-	//Trade
+	//Trade -- exchange prop for money
 	//Buy/sell houses
 	//mortgage
-	//roll dice
 	//purchase or pay rent (financial stuff)
 
 	private int iTurn;
 	private int iTurnStep;
-	
-	public Turn(){
+	//Just a guess, change if nessesary
+	private int iNumSteps = 5;
+	private int iNumPlayers;
+	public Turn(int iNumPlayers){
 		iTurn = 0;
 		iTurnStep = 0;
+		this.iNumPlayers = iNumPlayers;
+		
 	}
 	public void setTurn(int iNumPlayers,int turn){
 		iTurn = turn;
@@ -19,7 +22,7 @@ public class Turn {
 			iTurn = 0;
 		}
 	}
-	public void incrementTurn(int iNumPlayers){
+	public void incrementTurn(){
 		iTurn++;
 		if(iTurn >= iNumPlayers){
 			iTurn = 0;
@@ -32,7 +35,7 @@ public class Turn {
 	public void setTurnStep(int iNumSteps,int turnStep){
 		iTurnStep = turnStep;
 	}
-	public void incrementTurnStep(int iNumSteps){
+	public void incrementTurnStep(){
 		iTurnStep++;
 		if(iTurn >= iNumSteps){
 			iTurn++;
