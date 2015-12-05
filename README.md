@@ -5,3 +5,4 @@ https://docs.google.com/document/d/1FAmHj_IXjMqCj6guO8ApJi7B0SrGL5ER1ZJi4AiLnOQ/
 
 To do list:
 -Deal with go to jail square
+-Need list of properties that you cannot buy
