@@ -13,6 +13,7 @@ public class Properties {
 	private int iHouseCost;
 	private int iHotelCost;
 	private int iMonopoly;
+	private int iNumHouses;
 
 	public Properties()
 	{	
@@ -29,6 +30,7 @@ public class Properties {
 		iHouseCost = 0;
 		iHotelCost = 0;
 		iMonopoly = 0;
+		iNumHouses = 0;
 	}
 	
 	public Properties(int iSpace, String sName, int iCost, int iRent, int iOneHouse, 
@@ -48,6 +50,7 @@ public class Properties {
 		this.iHouseCost = iHouseCost;
 		this.iHotelCost = iHotelCost;
 		this.iMonopoly = iMonopoly;
+		iNumHouses = 0;
 	
 	}
 	
@@ -179,3 +182,15 @@ public class Properties {
 	{
 		return iMonopoly;
 	}
+	public int getNumHouses(){
+		return iNumHouses;
+	}
+	public void setNumHouses(int iNum){
+		if (iNum<=5){
+			iNumHouses=iNum;
+		}
+	}
+	public void addHouse(){
+		setNumHouses(getNumHouses()+1);
+	}
+}
