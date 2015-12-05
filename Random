@@ -4,9 +4,8 @@
  
 import java.util.Random; 
 public class Randoms {
-	Random oRandNbr = new Random();
-	public int [] RandomDice(){
-		
+	public static int [] RandomDice(){
+		Random oRandNbr = new Random();
 		int iDie1 = oRandNbr.nextInt(6)+1;
 		int iDie2 = oRandNbr.nextInt(6)+1;
 		int iMove = iDie1 + iDie2;
@@ -18,17 +17,4 @@ public class Randoms {
 		int [] aOut = {iDie1,iDie2,iMove}; // array[0..1] ==  each die and array[2] == move amount
 		return aOut;
 	}
-	
-	public int RandomChestint(){
-		int iNumbr = oRandNbr.nextInt(15);
-		return iNumbr;
-	}
-	
-	public int RandomChanceint(){
-		int iNumbr = oRandNbr.nextInt(/*number of cards in chance*/);
-		return iNumbr;
-	}
-		
-	
-
 }
