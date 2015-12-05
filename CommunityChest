@@ -4,6 +4,127 @@
  * use for community chest
  */
 
+import java.util.Random;
+	
+public class CommunityChest {
+	Random oRandom = new Random();
+	
+	public Players [] card(Players [] aPlayers, int iPlayerID){
+		
+		int iCard = (oRandom.nextInt(15) + 1);
+		
+		if(iCard == 1)
+			card1(aPlayers[iPlayersID]);
+		else if(iCard == 2)
+			card2(aPlayers[iPlayersID]);
+		else if(iCard == 3)
+			card3(aPlayers[iPlayersID]);
+		else if(iCard == 4)
+			card4(aPlayers[iPlayersID]);
+		else if(iCard == 5)
+			card5(aPlayers[iPlayersID]);
+		else if(iCard == 6)
+			card6(aPlayers[iPlayersID]);
+		else if(iCard == 7)
+			card7(aPlayers[iPlayersID]);
+		else if(iCard == 8)
+			card8(aPlayers[iPlayersID]);
+		else if(iCard == 9)
+			card9(aPlayers[iPlayersID]);
+		else if(iCard == 10)
+			card10(aPlayers[iPlayersID]);
+		else if(iCard == 11)
+			card11(aPlayers[iPlayersID]);
+		else if(iCard == 12)
+			card12(aPlayers[iPlayersID]);
+		else if(iCard == 13)
+			card13(aPlayers[iPlayersID]);
+		else if(iCard == 14)
+			card14(aPlayers[iPlayersID]);
+		else
+			card15(aPlayers[iPlayersID]);
+		
+		return aPlayers;
+	}
+	
+	public Players card1(Players oPlayer){
+		//WRITE CARD HERE(it should modify the player, and then return the player)
+		return(oPlayer);
+	}
+	public Players card2(Players oPlayer){
+		//WRITE CARD HERE(it should modify the player, and then return the player)
+		return(oPlayer);
+	}
+	public Players card3(Players oPlayer){
+		//WRITE CARD HERE(it should modify the player, and then return the player)
+		return(oPlayer);
+	}
+	public Players card4(Players oPlayer){
+		//WRITE CARD HERE(it should modify the player, and then return the player)
+		return(oPlayer);
+	}
+	public Players card5(Players oPlayer){
+		//WRITE CARD HERE(it should modify the player, and then return the player)
+		return(oPlayer);
+	}
+	public Players card6(Players oPlayer){
+		//WRITE CARD HERE(it should modify the player, and then return the player)
+		return(oPlayer);
+	}
+	public Players card7(Players oPlayer){
+		//WRITE CARD HERE(it should modify the player, and then return the player)
+		return(oPlayer);
+	}
+	public Players card8(Players oPlayer){
+		//WRITE CARD HERE(it should modify the player, and then return the player)
+		return(oPlayer);
+	}
+	public Players card9(Players oPlayer){
+		//WRITE CARD HERE(it should modify the player, and then return the player)
+		return(oPlayer);
+	}
+	public Players card10(Players oPlayer){
+		//WRITE CARD HERE(it should modify the player, and then return the player)
+		return(oPlayer);
+	}
+	public Players card11(Players oPlayer){
+		//WRITE CARD HERE(it should modify the player, and then return the player)
+		return(oPlayer);
+	}
+	public Players card12(Players oPlayer){
+		//WRITE CARD HERE(it should modify the player, and then return the player)
+		return(oPlayer);
+	}
+	public Players card13(Players oPlayer){
+		//WRITE CARD HERE(it should modify the player, and then return the player)
+		return(oPlayer);
+	}
+	public Players card14(Players oPlayer){
+		//WRITE CARD HERE(it should modify the player, and then return the player)
+		return(oPlayer);
+	}
+	public Players card15(Players oPlayer){
+		//WRITE CARD HERE(it should modify the player, and then return the player)
+		return(oPlayer);
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+/*/*takes a number in
+ * that number is called for position in an array
+ * returns the value stored in that array position
+ * use for community chest
+ */
+
 
 import java.util.Scanner;
 	
@@ -26,3 +147,4 @@ public class CommunityChest {
 		
 
 }
+*/
