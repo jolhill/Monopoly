@@ -27,10 +27,14 @@ public class Menu {
 			if (choice == 0){
 				return true;
 			}
-			else{
+			else if (choice == 1){
 				return false;
 			}
-
+			else{
+				QuitPrompt();
+				return false;
+			}
+			
 			
 //Restart
 //prompt user to exit or restart when win condition is met (or if desired during game)
