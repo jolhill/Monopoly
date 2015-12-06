@@ -22,7 +22,7 @@ public class Menu {
 		public static boolean YesNoPrompt(String sMessage){
 			int choice = JOptionPane.showConfirmDialog(
 				    null, sMessage,
-				    "Quit?",
+				    "",
 				    JOptionPane.YES_NO_OPTION);
 			if (choice == 0){
 				return true;
