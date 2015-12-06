@@ -1,7 +1,7 @@
 import javax.swing.JOptionPane;
 
 public class Menu {
-		private static void QuitPrompt(){ // Will prompt for player to quit Y/N. 
+		public static void QuitPrompt(){ // Will prompt for player to quit Y/N. 
 			int choice = JOptionPane.showConfirmDialog(
 				    null, "Would you like to quit?",
 				    "Quit?",
@@ -16,7 +16,23 @@ public class Menu {
 				System.out.println("Error. Incorrect option chosen. Terminating :(");
 				System.exit(0);
 			}
+
+		}
+		
+		public static boolean YesNoPrompt(String sMessage){
+			int choice = JOptionPane.showConfirmDialog(
+				    null, sMessage,
+				    "Quit?",
+				    JOptionPane.YES_NO_OPTION);
+			if (choice == 0){
+				return true;
+			}
+			else{
+				return false;
+			}
+
 			
 //Restart
 //prompt user to exit or restart when win condition is met (or if desired during game)
+		}
 }
