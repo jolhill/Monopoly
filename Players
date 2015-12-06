@@ -91,6 +91,9 @@ public class Players {
 	public String toString(){
 		return(getPlayerName()+" "+getPlayerID()+ " "+ getPlayerMoney()+ " "+getBoardPosition());
 	}
+	public String statusReport(){
+		return("You have $" + getPlayerMoney() + " and are currently on ");
+	}
 	
 	public int [] getOwnedProperties(){
 		int iNumOwned = 0;
@@ -119,16 +122,20 @@ public class Players {
 	}
 	public String strArrayToString(String [] array){
 		String out = "";
-		for(int i = 0; i < array.length; i++){
-			System.out.print(array[i] + ",");
+		for(int i = 0; i < array.length - 1; i++){
+				out += (array[i] + ",");
 		}
-		if(out.length() == 0){
-			out += "No Properties";
+		if(array.length == 0){
+			out += "No Properties\n";
 		}
+		else{
+			out += (array[array.length-1]+ "\n");
+		}
+		
 		return out;
 	}
 	public String getStrListOfPropsOwned(Properties [] aBoard){
-		String out = (strArrayToString(getOwnedPropertiesStrArray(aBoard))+" are owned by "+sPlayer);
+		String out = (strArrayToString(getOwnedPropertiesStrArray(aBoard)));
 		return(out);
 	}
 	public void moveForward(int iAmount){
