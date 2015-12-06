@@ -6,13 +6,11 @@ public class Turn {
 	//purchase or pay rent (financial stuff)
 
 	private int iTurn;
-	private int iTurnStep;
-	//Just a guess, change if nessesary
-	private int iNumSteps = 5;
 	private int iNumPlayers;
+	
+	//Constructor
 	public Turn(int iNumPlayers){
 		iTurn = 0;
-		iTurnStep = 0;
 		this.iNumPlayers = iNumPlayers;
 		
 	}
@@ -32,19 +30,6 @@ public class Turn {
 		return iTurn;
 	}
 	
-	public void setTurnStep(int iNumSteps,int turnStep){
-		iTurnStep = turnStep;
-	}
-	public void incrementTurnStep(){
-		iTurnStep++;
-		if(iTurn >= iNumSteps){
-			iTurn++;
-			iTurnStep = 0;
-		}
-	}
-	public int getTurnStep(){
-		return iTurnStep;
-	}
 	public String toString(){
 		return("It is currently player " + (iTurn+1)+ "'s turn.");
 	}
