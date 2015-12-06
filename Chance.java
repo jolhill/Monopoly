@@ -28,7 +28,7 @@ import java.util.Random;
 			else if(iCard == 3)
 				card3(aPlayers[iPlayerID]);
 			else if(iCard == 4)
-				card4(aPlayers[iPlayerID]);
+				card4(aPlayers[iPlayerID],oBoard);
 			else if(iCard == 5)
 				card5(aPlayers[iPlayerID]);
 			else if(iCard == 6)
@@ -44,7 +44,7 @@ import java.util.Random;
 			else if(iCard == 11)
 				card11(aPlayers[iPlayerID]);
 			else if(iCard == 12)
-				card12(aPlayers[iPlayerID]);
+				card12(iPlayerID,aPlayers);
 			else
 				card13(aPlayers[iPlayerID]);
 			
@@ -116,7 +116,6 @@ import java.util.Random;
 		}
 		// 9:Take a trip on the reading railroad , if you pass go collect 200$
 		public Players card9(Players oPlayer){
-			while(oPlayer.)
 			if(oPlayer.getBoardPosition()>=5){	
 				oPlayer.setBoardPosition(5);
 				oPlayer.setMoney(oPlayer.getPlayerMoney()+200);
@@ -125,20 +124,41 @@ import java.util.Random;
 				oPlayer.setBoardPosition(5);
 				return(oPlayer);
 		}
+		// 10: Go back 3 "spaces"
 		public Players card10(Players oPlayer){
-			//WRITE CARD HERE(it should modify the player, and then return the player)
+			oPlayer.setBoardPosition(oPlayer.getBoardPosition()-3);
 			return(oPlayer);
 		}
+		// 11:Pay poor tax of $15
 		public Players card11(Players oPlayer){
-			//WRITE CARD HERE(it should modify the player, and then return the player)
+			oPlayer.setMoney(oPlayer.getPlayerMoney()-15);
 			return(oPlayer);
 		}
-		public Players card12(Players oPlayer){
-			//WRITE CARD HERE(it should modify the player, and then return the player)
-			return(oPlayer);
+		// 12:You have been elected chairman of the board! pay each player $50
+		public Players [] card12(int iPlayerID,Players [] aPlayers){
+			//aPlayers[i] is who you give to
+			//aPlayers[iPlayerID] is the giver
+			for(int i = 0; i < aPlayers.length; i++){
+				aPlayers[iPlayerID].setMoney(aPlayers[iPlayerID].getPlayerMoney()-50);
+				aPlayers[i].setMoney(aPlayers[i].getPlayerMoney()+50);
+			}
+			return(aPlayers);
 		}
+		// 13:"Advance token to the nearest Railroad and pay owner twice the rental to which he/she is entitled.
+		//if Railroad is unowned you may buy it from the bank.
 		public Players card13(Players oPlayer){
-			//WRITE CARD HERE(it should modify the player, and then return the player)
+			if(oPlayer.getBoardPosition()<5 && oPlayer.getBoardPosition()>=35){
+				oPlayer.setBoardPosition(5);
+			}
+				else if(oPlayer.getBoardPosition()<15 && oPlayer.getBoardPosition() >=5){
+					oPlayer.setBoardPosition(15);
+				}
+				else if(oPlayer.getBoardPosition()<25 && oPlayer.getBoardPosition() >=15){
+					oPlayer.setBoardPosition(25);
+				}
+				else if(oPlayer.getBoardPosition()<35 && oPlayer.getBoardPosition() >=25){
+					oPlayer.setBoardPosition(35);
+				}
 			return(oPlayer);
 		}
 
