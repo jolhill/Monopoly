@@ -1,3 +1,6 @@
+import javax.swing.JOptionPane;
+
+import java.util.ArrayList;
 
 public class Players {
 
@@ -143,7 +146,106 @@ public class Players {
 		if(iBoardPosition >= 40){
 			iBoardPosition -= 40;
 			iMoney += 200;
+			JOptionPane.showMessageDialog(null,"You passed go and recieved $200!");
 		}
 	}
+	
+	public int [] getOwnedSets(Properties [] aBoard){
+		int [] aPropsOwned = getOwnedProperties();
+		int [] aSetsOwned = {0,0,0,0,0,0,0,0,0,0};
+		
+		for(int i = 0; i < aPropsOwned.length; i++){
+			int iSet = aBoard[aPropsOwned[i]].getiMonopoly();
+			aSetsOwned[iSet]++;
+		}
+		if(aSetsOwned[0] != 2)
+			aSetsOwned[0] = 0;
+		if(aSetsOwned[1] != 3)
+			aSetsOwned[1] = 0;
+		if(aSetsOwned[2] != 3)
+			aSetsOwned[2] = 0;
+		if(aSetsOwned[3] != 3)
+			aSetsOwned[3] = 0;
+		if(aSetsOwned[4] != 3)
+			aSetsOwned[4] = 0;
+		if(aSetsOwned[5] != 3)
+			aSetsOwned[5] = 0;
+		if(aSetsOwned[6] != 3)
+			aSetsOwned[6] = 0;
+		if(aSetsOwned[7] != 2)
+			aSetsOwned[7] = 0;
+		if(aSetsOwned[8] != 4)
+			aSetsOwned[8] = 0;
+		if(aSetsOwned[9] != 2)
+			aSetsOwned[9] = 0;
+		
+		return(aSetsOwned);
+	}
+	private String [] aPropertySets = {"dark purple","light blue","purple","orange","red","yellow","green","blue","rail-roads","utilities"};
+	
+	public Properties [] buyHouse(int iHouseCount, int iProp,Properties [] aBoard){
+		
+		int iNumHouses = aBoard[iProp].getNumHouses();
+		if((iNumHouses + iHouseCount) <= 5){
+			aBoard[iProp].setNumHouses(iNumHouses + iHouseCount);
+			setMoney(getPlayerMoney()-((iNumHouses)*aBoard[iProp].getiHouseCost()));
+		}
+		//ELSE INPUT VERIFICATION!!!!!!!!!!
+		
+		return aBoard;
+		
+	}
+	public Properties [] buyHouses(Properties [] aBoard){
+		int [] aSetsOwned = getOwnedSets(aBoard);
+		boolean bBuy = Menu.YesNoPrompt("Would you like to buy houses?");
+		if(bBuy){
+			for(int i = 0; i < aSetsOwned.length-2; i++){
+				String sOptionMessage = "You can buy houses on the following sets: \n";
+				String sOptions = "";
+				ArrayList<Integer> aIntOptions = new ArrayList<Integer>(); 
+				if(aSetsOwned[i] != 0){
+					sOptions += (aPropertySets[i]);
+					aIntOptions.add((Integer)i);
+				}
+				if(sOptions.length()==0){
+					sOptions+="no sets";
+				}
+				sOptionMessage += sOptions;
+				JOptionPane.showMessageDialog(null,sOptionMessage);
+				for(Integer aSet:aIntOptions){
+					boolean bBuyFromSet = Menu.YesNoPrompt("Would you like to buy houses for "+ aPropertySets[aSet.intValue()]);
+					if(bBuyFromSet){
+						ArrayList<Integer> aIntPropOpts = new ArrayList<Integer>();
+						for(int j = 0; j < aBoard.length; j++){
+							if(aBoard[j].getiMonopoly()== aSet.intValue()){
+								aIntPropOpts.add(j);
+							}
+						}
+						for(Integer iProp:aIntPropOpts){
+							boolean bBuyProp = Menu.YesNoPrompt("Would you like to buy houses for "+ aBoard[iProp.intValue()].getsName());
+							if(bBuyProp){
+								boolean bStarted = false;
+								do{
+								int iHouseCount = 0;
+								Object[] lOptions = {"1","2","3","4","Hotel"};
+								String sHouseCount = (String)JOptionPane.showInputDialog(null, "Select Number houses", "Houses", JOptionPane.PLAIN_MESSAGE, null, lOptions, null);
+									if (sHouseCount == "Hotel"){
+										iHouseCount = 5;
+									}
+									else if(sHouseCount != null){
+									iHouseCount=Integer.parseInt(sHouseCount);
+									}
+									aBoard = buyHouse(iHouseCount,iProp,aBoard);
+									bStarted = true;
+								}while(!bStarted);
+							}
+						}
+					}
+				}
+			}
+		}	
+		return aBoard;
+	}
 
+	
 }
