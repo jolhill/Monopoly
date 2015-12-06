@@ -9,7 +9,7 @@ public class Randoms {
 		int iDie1 = oRandNbr.nextInt(6)+1;
 		int iDie2 = oRandNbr.nextInt(6)+1;
 		int iMove = iDie1 + iDie2;
-		System.out.println(iDie1+" and "+ iDie2+ " the total move is " + iMove);
+		System.out.println(" rolled a "+iDie1+" and a "+ iDie2+ " and moved " + iMove + " spaces");
 		if (iDie1 == 1 && iDie2 == 1){
 			System.out.println("Snake Eyes");
 		}
