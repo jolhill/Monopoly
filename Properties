@@ -14,6 +14,7 @@ public class Properties {
 	private int iHotelCost;
 	private int iMonopoly;
 	private int iNumHouses;
+	private boolean isBuyable;
 
 	public Properties()
 	{	
@@ -31,11 +32,12 @@ public class Properties {
 		iHotelCost = 0;
 		iMonopoly = 0;
 		iNumHouses = 0;
+		isBuyable = false;
 	}
 	
 	public Properties(int iSpace, String sName, int iCost, int iRent, int iOneHouse, 
 			int iTwoHouse, int iThreeHouse, int iFourHouse, int iHotel, int iMortgage, 
-			int iHouseCost, int iHotelCost, int iMonopoly)
+			int iHouseCost, int iHotelCost, int iMonopoly,boolean isBuyable)
 	{
 		this.iSpace = iSpace;
 		this.sName = sName;
@@ -51,9 +53,9 @@ public class Properties {
 		this.iHotelCost = iHotelCost;
 		this.iMonopoly = iMonopoly;
 		iNumHouses = 0;
+		this.isBuyable = isBuyable;
 	
 	}
-	
 	public void setiSpace(int iSpace)
 	{
 		this.iSpace = iSpace;
@@ -62,6 +64,9 @@ public class Properties {
 	public int getiSpace()
 	{
 		return iSpace;
+	}
+	public boolean isBuyable(){
+		return isBuyable;
 	}
 	
 	public void setsName(String sName)
