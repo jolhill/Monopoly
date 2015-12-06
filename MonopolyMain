@@ -14,11 +14,15 @@ public class MonopolyMain {
 		Turn turn = new Turn(aPlayers.length);
 		boolean bDone = false;
 		while(!bDone){
+			System.out.println("----------------------------" +" "+aPlayers[turn.getTurn()].getPlayerName() + "'s turn " +"---------------------------");
 			
 			//Rolls dice + appropriate response to roll
-			boolean bDoubles = false;
 			int iDoublesCount = 0;
+			boolean bDoubles;
 			do{
+				bDoubles = false;
+				Menu.YesNoPrompt(aPlayers[turn.getTurn()].getPlayerName()+"'s roll");
+				System.out.print(aPlayers[turn.getTurn()].getPlayerName());
 				int [] aRoll = Randoms.RandomDice();
 				if(aRoll[0]==aRoll[1]){
 				bDoubles = true;
@@ -39,38 +43,40 @@ public class MonopolyMain {
 				else{
 				aPlayers[turn.getTurn()].moveForward(aRoll[2]);
 				}
-			}while(bDoubles);
-			turn.incrementTurnStep();
-			
-			//Checks for ownership of what they landed on
-			aPlayers[turn.getTurn()].getBoardPosition();
-			boolean bOwned = false;
-			//Possibly an issue, but probably fine, if I don't give it an initial value, 
-			//later it says that it may not have been initialized
-			int iOwnerID = 0;
-			for(int i = 0; i < aPlayers.length; i ++){
-				int [] aPropsOwned = aPlayers[i].getOwnedProperties();
-				for(int j = 0; j < aPlayers.length; j++){
-					if(aPropsOwned[j] == aPlayers[turn.getTurn()].getBoardPosition()){
-						bOwned = true;
-						iOwnerID = i;
+				
+				//Checks for ownership of what they landed on
+				aPlayers[turn.getTurn()].getBoardPosition();
+				boolean bOwned = false;
+				//Possibly an issue, but probably fine, if I don't give it an initial value, 
+				//later it says that it may not have been initialized
+				int iOwnerID = 0;
+				for(int i = 0; i < aPlayers.length; i ++){
+					int [] aPropsOwned = aPlayers[i].getOwnedProperties();
+					for(int j = 0; j < aPropsOwned.length; j++){
+						if(aPropsOwned[j] == aPlayers[turn.getTurn()].getBoardPosition()){
+							bOwned = true;
+							iOwnerID = i;
+						}
 					}
 				}
-			}
-			if(bOwned){
-				//if not owned by player{
-					//GET REAL AMOUNT
-					int amount = 100;
-					turn.transferMoney(amount, turn.getTurn(), iOwnerID, aPlayers);
-				//}
-			}
-			else{
-				System.out.println("Would you like to buy this property?");
-				//do methods for that
-			}
-			turn.incrementTurnStep();
+				if(bOwned){
+					if(iOwnerID != turn.getTurn() ){
+						int amount = 100;
+						turn.transferMoney(amount, turn.getTurn(), iOwnerID, aPlayers);
+					}
+				}
+				else{
+					boolean bAnswer = Menu.YesNoPrompt("Would you like to buy " 
+							+ aBoard[aPlayers[turn.getTurn()].getBoardPosition()].getsName()+ "for $"
+							+aBoard[aPlayers[turn.getTurn()].getBoardPosition()].getiCost() +"?");
+					if(bAnswer){
+						aPlayers[turn.getTurn()].toggleOwnership(aPlayers[turn.getTurn()].getBoardPosition());
+						aPlayers[turn.getTurn()].setMoney(aPlayers[turn.getTurn()].getPlayerMoney()-aBoard[aPlayers[turn.getTurn()].getBoardPosition()].getiCost());
+					}
+				}
+			}while(bDoubles);
 			
-			
+			turn.incrementTurn();
 		}
 		
 		
