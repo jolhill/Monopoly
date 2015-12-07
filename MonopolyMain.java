@@ -23,7 +23,7 @@ public class MonopolyMain {
 			//Account Summary
 			System.out.println("\n\n----------------------------" +" "+aPlayers[turn.getTurn()].getPlayerName() + "'s turn " +"---------------------------");
 			System.out.print("Beginning: "+aPlayers[turn.getTurn()].statusReport() + aBoard[aPlayers[turn.getTurn()].getBoardPosition()].getsName()
-					+ " and you own the following properties: ");
+					+ " and you own the following properties: \n");
 			System.out.print(aPlayers[turn.getTurn()].getStrListOfPropsOwned(aBoard));
 			
 			//Rolls dice + appropriate response to roll
@@ -31,6 +31,8 @@ public class MonopolyMain {
 			boolean bDoubles;
 			//Do While Doubles
 			do{
+				aBoard = aPlayers[turn.getTurn()].buyHouses(aBoard);
+				
 				bDoubles = false;
 				JOptionPane.showMessageDialog(null,"Roll");
 				
@@ -100,7 +102,11 @@ public class MonopolyMain {
 					
 					if(bOwned){
 						if(iOwnerID != turn.getTurn() ){
-							int amount = 100;
+							int amount = aBoard[aPlayers[turn.getTurn()].getBoardPosition()].landedOn();
+							JOptionPane.showMessageDialog(null,"You landed on"+
+							aBoard[aPlayers[turn.getTurn()].getBoardPosition()].getsName()+" with "+
+							aBoard[aPlayers[turn.getTurn()].getBoardPosition()].getNumHouses()+ " house(s)"+
+							" and paid "+ aPlayers[iOwnerID].getPlayerName()+ " $" + amount);
 							turn.transferMoney(amount, turn.getTurn(), iOwnerID, aPlayers);
 						}
 					}
@@ -113,12 +119,11 @@ public class MonopolyMain {
 							aPlayers[turn.getTurn()].setMoney(aPlayers[turn.getTurn()].getPlayerMoney()-aBoard[aPlayers[turn.getTurn()].getBoardPosition()].getiCost());
 						}
 					}
-					aBoard = aPlayers[turn.getTurn()].buyHouses(aBoard);
 				}
 			}while(bDoubles);
 			//END OF TURN SUMMARY
-			System.out.print("End: "+aPlayers[turn.getTurn()].statusReport() + aBoard[aPlayers[turn.getTurn()].getBoardPosition()].getsName()
-					+ " and you own the following properties: ");
+			System.out.print("\nEnd: "+aPlayers[turn.getTurn()].statusReport() + aBoard[aPlayers[turn.getTurn()].getBoardPosition()].getsName()
+					+ " and you own the following properties: \n");
 			System.out.print(aPlayers[turn.getTurn()].getStrListOfPropsOwned(aBoard));
 			
 			//SWITCHES TURN TO THE NEXT PLAYER
