@@ -35,6 +35,27 @@ public class Properties {
 		isBuyable = false;
 	}
 	
+	public int landedOn(){
+		if(iNumHouses == 0){
+			return iRent;
+		}
+		else if(iNumHouses == 1){
+			return iOneHouse;
+		}
+		else if(iNumHouses == 2){
+			return iTwoHouse;
+		}
+		else if(iNumHouses == 3){
+			return iThreeHouse;
+		}
+		else if(iNumHouses == 4){
+			return iFourHouse;
+		}
+		else{
+			return iHotel;
+		}
+	}
+	
 	public Properties(int iSpace, String sName, int iCost, int iRent, int iOneHouse, 
 			int iTwoHouse, int iThreeHouse, int iFourHouse, int iHotel, int iMortgage, 
 			int iHouseCost, int iHotelCost, int iMonopoly,boolean isBuyable)
