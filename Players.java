@@ -156,7 +156,7 @@ public class Players {
 		
 		for(int i = 0; i < aPropsOwned.length; i++){
 			int iSet = aBoard[aPropsOwned[i]].getiMonopoly();
-			aSetsOwned[iSet]++;
+			aSetsOwned[iSet-1]++;
 		}
 		if(aSetsOwned[0] != 2)
 			aSetsOwned[0] = 0;
@@ -197,21 +197,25 @@ public class Players {
 	}
 	public Properties [] buyHouses(Properties [] aBoard){
 		int [] aSetsOwned = getOwnedSets(aBoard);
-		boolean bBuy = Menu.YesNoPrompt("Would you like to buy houses?");
-		if(bBuy){
-			for(int i = 0; i < aSetsOwned.length-2; i++){
-				String sOptionMessage = "You can buy houses on the following sets: \n";
-				String sOptions = "";
-				ArrayList<Integer> aIntOptions = new ArrayList<Integer>(); 
-				if(aSetsOwned[i] != 0){
-					sOptions += (aPropertySets[i]);
-					aIntOptions.add((Integer)i);
-				}
-				if(sOptions.length()==0){
-					sOptions+="no sets";
-				}
-				sOptionMessage += sOptions;
-				JOptionPane.showMessageDialog(null,sOptionMessage);
+		int iLoopCount = 0;
+		for(int i = 0; i < aSetsOwned.length-2; i++){
+			boolean bOwned = false;
+			String sOptionMessage = "";
+			ArrayList<Integer> aIntOptions = new ArrayList<Integer>(); 
+			if(aSetsOwned[i] != 0){
+				sOptionMessage += (aPropertySets[i]);
+				aIntOptions.add((Integer)i);
+				JOptionPane.showMessageDialog(null,("You own the set of "+sOptionMessage));
+				bOwned = true;
+			}
+			else if(iLoopCount == 7){
+				JOptionPane.showMessageDialog(null,"No sets to buy houses for yet");
+			}
+			else{
+				iLoopCount++;
+			}
+
+			if(bOwned){
 				for(Integer aSet:aIntOptions){
 					boolean bBuyFromSet = Menu.YesNoPrompt("Would you like to buy houses for "+ aPropertySets[aSet.intValue()]);
 					if(bBuyFromSet){
@@ -243,7 +247,8 @@ public class Players {
 					}
 				}
 			}
-		}	
+		}
+
 		return aBoard;
 	}
 
