@@ -72,7 +72,8 @@ public class Players {
 	}
 	public int getPlayerMoney(){
 		if(iMoney <= 0){
-			return (0);
+			iMoney = 0;
+			return (iMoney);
 		}else{
 			return(iMoney);
 		}
