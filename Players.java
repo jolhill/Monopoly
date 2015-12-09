@@ -71,7 +71,11 @@ public class Players {
 		return(iPlayerID);
 	}
 	public int getPlayerMoney(){
-		return(iMoney);
+		if(iMoney <= 0){
+			return (0);
+		}else{
+			return(iMoney);
+		}
 	}
 	public int getBoardPosition(){
 		return(iBoardPosition);
